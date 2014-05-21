@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3026C4C8192D606C00A1E1EF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026C4C7192D606C00A1E1EF /* BaseViewController.m */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -33,6 +34,8 @@
 		30841157192C1675002E4069 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841152192C1675002E4069 /* AMBlurView.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
 		30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841154192C1675002E4069 /* MYBlurIntroductionView.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
 		30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841156192C1675002E4069 /* MYIntroductionPanel.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
+		3084115C192D5C8E002E4069 /* AntiCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3084115B192D5C8E002E4069 /* AntiCameraViewController.m */; };
+		3084115F192D5CD3002E4069 /* ViolationHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3084115E192D5CD3002E4069 /* ViolationHistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3026C4C6192D606C00A1E1EF /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		3026C4C7192D606C00A1E1EF /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -83,6 +88,10 @@
 		30841154192C1675002E4069 /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
 		30841155192C1675002E4069 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
 		30841156192C1675002E4069 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
+		3084115A192D5C8E002E4069 /* AntiCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AntiCameraViewController.h; sourceTree = "<group>"; };
+		3084115B192D5C8E002E4069 /* AntiCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AntiCameraViewController.m; sourceTree = "<group>"; };
+		3084115D192D5CD3002E4069 /* ViolationHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationHistoryViewController.h; sourceTree = "<group>"; };
+		3084115E192D5CD3002E4069 /* ViolationHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationHistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +198,12 @@
 				30841125192C0BF6002E4069 /* ViolationQueryViewController.m */,
 				30841127192C0C13002E4069 /* AboutViewController.h */,
 				30841128192C0C13002E4069 /* AboutViewController.m */,
+				3084115A192D5C8E002E4069 /* AntiCameraViewController.h */,
+				3084115B192D5C8E002E4069 /* AntiCameraViewController.m */,
+				3084115D192D5CD3002E4069 /* ViolationHistoryViewController.h */,
+				3084115E192D5CD3002E4069 /* ViolationHistoryViewController.m */,
+				3026C4C6192D606C00A1E1EF /* BaseViewController.h */,
+				3026C4C7192D606C00A1E1EF /* BaseViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -336,11 +351,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */,
+				3026C4C8192D606C00A1E1EF /* BaseViewController.m in Sources */,
 				30841149192C1613002E4069 /* IntroductionController.m in Sources */,
 				30841126192C0BF6002E4069 /* ViolationQueryViewController.m in Sources */,
+				3084115C192D5C8E002E4069 /* AntiCameraViewController.m in Sources */,
 				30841105192C0B01002E4069 /* AppDelegate.m in Sources */,
 				30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */,
 				30841147192C1613002E4069 /* MYCustomPanel.m in Sources */,
+				3084115F192D5CD3002E4069 /* ViolationHistoryViewController.m in Sources */,
 				30841129192C0C13002E4069 /* AboutViewController.m in Sources */,
 				30841101192C0B01002E4069 /* main.m in Sources */,
 				30841157192C1675002E4069 /* AMBlurView.m in Sources */,
@@ -544,6 +562,7 @@
 				3084111F192C0B01002E4069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30841120192C0B01002E4069 /* Build configuration list for PBXNativeTarget "TrafficViolationProofTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +571,7 @@
 				30841122192C0B01002E4069 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

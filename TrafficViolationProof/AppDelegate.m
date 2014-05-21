@@ -10,6 +10,8 @@
 #import "ViolationQueryViewController.h"
 #import "AboutViewController.h"
 #import "IntroductionController.h"
+#import "AntiCameraViewController.h"
+#import "ViolationHistoryViewController.h"
 
 @implementation AppDelegate
 
@@ -74,22 +76,31 @@
 {
     ViolationQueryViewController* violationController = [ViolationQueryViewController new];
     AboutViewController* aboutController = [AboutViewController new];
+    AntiCameraViewController* antiCamera = [AntiCameraViewController new];
+    ViolationHistoryViewController* history = [ViolationHistoryViewController new];
     
     UITabBarController* tabbedController = [[UITabBarController alloc]init];
-    tabbedController.viewControllers = [[NSArray alloc]initWithObjects:violationController,aboutController, nil];
+    tabbedController.viewControllers = [[NSArray alloc]initWithObjects:violationController,antiCamera,history,aboutController, nil];
     
     self.window.rootViewController = tabbedController;
     
     [violationController release];
     [aboutController release];
+    [antiCamera release];
+    [history release];
     
     //set properties
     UITabBar *tabBar = tabbedController.tabBar;
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
-    tabBarItem1.title = @"Home";
-    tabBarItem2.title = @"Maps";
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
     
+    //暂时不考虑支持国际化的问题，字符资源就写在这里了
+    tabBarItem1.title = @"查违章";
+    tabBarItem2.title = @"防违章";
+    tabBarItem3.title = @"历史违章";
+    tabBarItem4.title = @"设置";
     
     [tabBarItem1 setSelectedImage:[UIImage imageNamed:@"home_selected.png"]];
     [tabBarItem2 setSelectedImage:[UIImage imageNamed:@"maps_selected.png"]];

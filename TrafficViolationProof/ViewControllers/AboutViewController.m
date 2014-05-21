@@ -45,5 +45,11 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)initViews
+{
+    UITextView* placeHolderTextView = [[UITextView alloc]initWithFrame:self.view.frame];
+    placeHolderTextView.text = @"正在开发，优先级 2";
+    
+    [[self baseView] addSubview:placeHolderTextView];
+}
 @end
