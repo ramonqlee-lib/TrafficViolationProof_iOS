@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ViolationQueryViewController.h"
+#import "AboutViewController.h"
+#import "MYViewController.h"
 
 @implementation AppDelegate
 
@@ -14,8 +17,20 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //TODO::第一次使用软件或者升级后
+    if(true)
+    {
+        [self initIntroduction];
+    }
+    else
+    {
+        [self initTabBar];
+    }
+    
     return YES;
 }
 
@@ -44,6 +59,39 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark init
+-(void)initIntroduction
+{
+    MYViewController* introduction = [MYViewController new];
+    self.window.rootViewController = introduction;
+    [introduction release];
+}
+
+-(void)initTabBar
+{
+    ViolationQueryViewController* violationController = [ViolationQueryViewController new];
+    AboutViewController* aboutController = [AboutViewController new];
+    
+    UITabBarController* tabbedController = [[UITabBarController alloc]init];
+    tabbedController.viewControllers = [[NSArray alloc]initWithObjects:violationController,aboutController, nil];
+    
+    self.window.rootViewController = tabbedController;
+    
+    [violationController release];
+    [aboutController release];
+    
+    //set properties
+    UITabBar *tabBar = tabbedController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    tabBarItem1.title = @"Home";
+    tabBarItem2.title = @"Maps";
+    
+    
+    [tabBarItem1 setSelectedImage:[UIImage imageNamed:@"home_selected.png"]];
+    [tabBarItem2 setSelectedImage:[UIImage imageNamed:@"maps_selected.png"]];
 }
 
 @end

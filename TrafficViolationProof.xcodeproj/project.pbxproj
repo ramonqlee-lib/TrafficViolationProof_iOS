@@ -19,6 +19,20 @@
 		30841110192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
 		30841118192C0B01002E4069 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30841116192C0B01002E4069 /* InfoPlist.strings */; };
 		3084111A192C0B01002E4069 /* TrafficViolationProofTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841119192C0B01002E4069 /* TrafficViolationProofTests.m */; };
+		30841126192C0BF6002E4069 /* ViolationQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841125192C0BF6002E4069 /* ViolationQueryViewController.m */; };
+		30841129192C0C13002E4069 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841128192C0C13002E4069 /* AboutViewController.m */; };
+		30841144192C1613002E4069 /* CheckMarkWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 30841139192C1613002E4069 /* CheckMarkWhite.png */; };
+		30841145192C1613002E4069 /* ForkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3084113A192C1613002E4069 /* ForkImage.png */; };
+		30841146192C1613002E4069 /* HeaderImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3084113B192C1613002E4069 /* HeaderImage.png */; };
+		30841147192C1613002E4069 /* MYCustomPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3084113D192C1613002E4069 /* MYCustomPanel.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
+		30841148192C1613002E4069 /* MYCustomPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3084113E192C1613002E4069 /* MYCustomPanel.xib */; };
+		30841149192C1613002E4069 /* MYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841140192C1613002E4069 /* MYViewController.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
+		3084114A192C1613002E4069 /* TestHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30841141192C1613002E4069 /* TestHeader.xib */; };
+		3084114B192C1613002E4069 /* TestPanel3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30841142192C1613002E4069 /* TestPanel3.xib */; };
+		3084114C192C1613002E4069 /* Toronto, ON.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30841143192C1613002E4069 /* Toronto, ON.jpg */; };
+		30841157192C1675002E4069 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841152192C1675002E4069 /* AMBlurView.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
+		30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841154192C1675002E4069 /* MYBlurIntroductionView.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
+		30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841156192C1675002E4069 /* MYIntroductionPanel.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +62,27 @@
 		30841115192C0B01002E4069 /* TrafficViolationProofTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrafficViolationProofTests-Info.plist"; sourceTree = "<group>"; };
 		30841117192C0B01002E4069 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30841119192C0B01002E4069 /* TrafficViolationProofTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficViolationProofTests.m; sourceTree = "<group>"; };
+		30841124192C0BF6002E4069 /* ViolationQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationQueryViewController.h; sourceTree = "<group>"; };
+		30841125192C0BF6002E4069 /* ViolationQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationQueryViewController.m; sourceTree = "<group>"; };
+		30841127192C0C13002E4069 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		30841128192C0C13002E4069 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		30841139192C1613002E4069 /* CheckMarkWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckMarkWhite.png; sourceTree = "<group>"; };
+		3084113A192C1613002E4069 /* ForkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ForkImage.png; sourceTree = "<group>"; };
+		3084113B192C1613002E4069 /* HeaderImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderImage.png; sourceTree = "<group>"; };
+		3084113C192C1613002E4069 /* MYCustomPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYCustomPanel.h; sourceTree = "<group>"; };
+		3084113D192C1613002E4069 /* MYCustomPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYCustomPanel.m; sourceTree = "<group>"; };
+		3084113E192C1613002E4069 /* MYCustomPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYCustomPanel.xib; sourceTree = "<group>"; };
+		3084113F192C1613002E4069 /* MYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYViewController.h; sourceTree = "<group>"; };
+		30841140192C1613002E4069 /* MYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYViewController.m; sourceTree = "<group>"; };
+		30841141192C1613002E4069 /* TestHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestHeader.xib; sourceTree = "<group>"; };
+		30841142192C1613002E4069 /* TestPanel3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestPanel3.xib; sourceTree = "<group>"; };
+		30841143192C1613002E4069 /* Toronto, ON.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Toronto, ON.jpg"; sourceTree = "<group>"; };
+		30841151192C1675002E4069 /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
+		30841152192C1675002E4069 /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
+		30841153192C1675002E4069 /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
+		30841154192C1675002E4069 /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
+		30841155192C1675002E4069 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
+		30841156192C1675002E4069 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +142,8 @@
 		308410FA192C0B01002E4069 /* TrafficViolationProof */ = {
 			isa = PBXGroup;
 			children = (
+				3084114F192C1661002E4069 /* Libs */,
+				30841123192C0B73002E4069 /* ViewControllers */,
 				30841103192C0B01002E4069 /* AppDelegate.h */,
 				30841104192C0B01002E4069 /* AppDelegate.m */,
 				30841106192C0B01002E4069 /* Images.xcassets */,
@@ -142,6 +179,58 @@
 				30841116192C0B01002E4069 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30841123192C0B73002E4069 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				30841138192C1613002E4069 /* Introduction */,
+				30841124192C0BF6002E4069 /* ViolationQueryViewController.h */,
+				30841125192C0BF6002E4069 /* ViolationQueryViewController.m */,
+				30841127192C0C13002E4069 /* AboutViewController.h */,
+				30841128192C0C13002E4069 /* AboutViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		30841138192C1613002E4069 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				30841139192C1613002E4069 /* CheckMarkWhite.png */,
+				3084113A192C1613002E4069 /* ForkImage.png */,
+				3084113B192C1613002E4069 /* HeaderImage.png */,
+				3084113C192C1613002E4069 /* MYCustomPanel.h */,
+				3084113D192C1613002E4069 /* MYCustomPanel.m */,
+				3084113E192C1613002E4069 /* MYCustomPanel.xib */,
+				3084113F192C1613002E4069 /* MYViewController.h */,
+				30841140192C1613002E4069 /* MYViewController.m */,
+				30841141192C1613002E4069 /* TestHeader.xib */,
+				30841142192C1613002E4069 /* TestPanel3.xib */,
+				30841143192C1613002E4069 /* Toronto, ON.jpg */,
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
+		3084114F192C1661002E4069 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				30841150192C1675002E4069 /* MYBlurIntroductionView */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		30841150192C1675002E4069 /* MYBlurIntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				30841151192C1675002E4069 /* AMBlurView.h */,
+				30841152192C1675002E4069 /* AMBlurView.m */,
+				30841153192C1675002E4069 /* MYBlurIntroductionView.h */,
+				30841154192C1675002E4069 /* MYBlurIntroductionView.m */,
+				30841155192C1675002E4069 /* MYIntroductionPanel.h */,
+				30841156192C1675002E4069 /* MYIntroductionPanel.m */,
+			);
+			name = MYBlurIntroductionView;
+			path = ../../../../iOS_Lib/MYBlurIntroductionView/MYBlurIntroductionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +308,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3084114C192C1613002E4069 /* Toronto, ON.jpg in Resources */,
+				30841146192C1613002E4069 /* HeaderImage.png in Resources */,
+				30841144192C1613002E4069 /* CheckMarkWhite.png in Resources */,
+				3084114B192C1613002E4069 /* TestPanel3.xib in Resources */,
+				30841145192C1613002E4069 /* ForkImage.png in Resources */,
+				30841148192C1613002E4069 /* MYCustomPanel.xib in Resources */,
 				308410FF192C0B01002E4069 /* InfoPlist.strings in Resources */,
+				3084114A192C1613002E4069 /* TestHeader.xib in Resources */,
 				30841107192C0B01002E4069 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,8 +335,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */,
+				30841149192C1613002E4069 /* MYViewController.m in Sources */,
+				30841126192C0BF6002E4069 /* ViolationQueryViewController.m in Sources */,
 				30841105192C0B01002E4069 /* AppDelegate.m in Sources */,
+				30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */,
+				30841147192C1613002E4069 /* MYCustomPanel.m in Sources */,
+				30841129192C0C13002E4069 /* AboutViewController.m in Sources */,
 				30841101192C0B01002E4069 /* main.m in Sources */,
+				30841157192C1675002E4069 /* AMBlurView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +460,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficViolationProof/TrafficViolationProof-Prefix.pch";
 				INFOPLIST_FILE = "TrafficViolationProof/TrafficViolationProof-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -370,9 +475,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficViolationProof/TrafficViolationProof-Prefix.pch";
 				INFOPLIST_FILE = "TrafficViolationProof/TrafficViolationProof-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

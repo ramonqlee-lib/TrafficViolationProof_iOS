@@ -12,4 +12,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void)initTabBar;//创建带tabbar的主界面
 @end
