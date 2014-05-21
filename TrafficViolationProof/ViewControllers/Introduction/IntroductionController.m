@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Matthew York. All rights reserved.
 //
 
-#import "MYViewController.h"
+#import "IntroductionController.h"
 #import "AppDelegate.h"
 #import "MYCustomPanel.h"
 
-@interface MYViewController ()
+@interface IntroductionController ()
 
 @end
 
-@implementation MYViewController
+@implementation IntroductionController
 
 - (void)viewDidLoad
 {
@@ -82,11 +82,12 @@
     
 }
 
+//引导界面结束，正式进入主界面
 -(void)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType {
     NSLog(@"Introduction did finish");
     AppDelegate* delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     if (delegate) {
-        [delegate initTabBar];
+        [delegate startMainUIWithTabbar];
     }
 }
 

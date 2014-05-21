@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViolationQueryViewController.h"
 #import "AboutViewController.h"
-#import "MYViewController.h"
+#import "IntroductionController.h"
 
 @implementation AppDelegate
 
@@ -21,14 +21,15 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    //TODO::第一次使用软件或者升级后
+    //TODO::根据条件，确定是进入引导流程还是进入主界面
+    //条件的确定：安装了新版本，并且有引导配置文件(将引导流程标准化，做几个模板，通过组合的方式来实现引导)
     if(true)
     {
-        [self initIntroduction];
+        [self startIntroduction];
     }
     else
     {
-        [self initTabBar];
+        [self startMainUIWithTabbar];
     }
     
     return YES;
@@ -62,14 +63,14 @@
 }
 
 #pragma mark init
--(void)initIntroduction
+-(void)startIntroduction
 {
-    MYViewController* introduction = [MYViewController new];
+    IntroductionController* introduction = [IntroductionController new];
     self.window.rootViewController = introduction;
     [introduction release];
 }
 
--(void)initTabBar
+-(void)startMainUIWithTabbar
 {
     ViolationQueryViewController* violationController = [ViolationQueryViewController new];
     AboutViewController* aboutController = [AboutViewController new];

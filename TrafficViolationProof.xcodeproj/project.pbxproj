@@ -26,7 +26,7 @@
 		30841146192C1613002E4069 /* HeaderImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3084113B192C1613002E4069 /* HeaderImage.png */; };
 		30841147192C1613002E4069 /* MYCustomPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3084113D192C1613002E4069 /* MYCustomPanel.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
 		30841148192C1613002E4069 /* MYCustomPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3084113E192C1613002E4069 /* MYCustomPanel.xib */; };
-		30841149192C1613002E4069 /* MYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841140192C1613002E4069 /* MYViewController.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
+		30841149192C1613002E4069 /* IntroductionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841140192C1613002E4069 /* IntroductionController.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
 		3084114A192C1613002E4069 /* TestHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30841141192C1613002E4069 /* TestHeader.xib */; };
 		3084114B192C1613002E4069 /* TestPanel3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30841142192C1613002E4069 /* TestPanel3.xib */; };
 		3084114C192C1613002E4069 /* Toronto, ON.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30841143192C1613002E4069 /* Toronto, ON.jpg */; };
@@ -72,8 +72,8 @@
 		3084113C192C1613002E4069 /* MYCustomPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYCustomPanel.h; sourceTree = "<group>"; };
 		3084113D192C1613002E4069 /* MYCustomPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYCustomPanel.m; sourceTree = "<group>"; };
 		3084113E192C1613002E4069 /* MYCustomPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYCustomPanel.xib; sourceTree = "<group>"; };
-		3084113F192C1613002E4069 /* MYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYViewController.h; sourceTree = "<group>"; };
-		30841140192C1613002E4069 /* MYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYViewController.m; sourceTree = "<group>"; };
+		3084113F192C1613002E4069 /* IntroductionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionController.h; sourceTree = "<group>"; };
+		30841140192C1613002E4069 /* IntroductionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionController.m; sourceTree = "<group>"; };
 		30841141192C1613002E4069 /* TestHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestHeader.xib; sourceTree = "<group>"; };
 		30841142192C1613002E4069 /* TestPanel3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestPanel3.xib; sourceTree = "<group>"; };
 		30841143192C1613002E4069 /* Toronto, ON.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Toronto, ON.jpg"; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 				3084113C192C1613002E4069 /* MYCustomPanel.h */,
 				3084113D192C1613002E4069 /* MYCustomPanel.m */,
 				3084113E192C1613002E4069 /* MYCustomPanel.xib */,
-				3084113F192C1613002E4069 /* MYViewController.h */,
-				30841140192C1613002E4069 /* MYViewController.m */,
+				3084113F192C1613002E4069 /* IntroductionController.h */,
+				30841140192C1613002E4069 /* IntroductionController.m */,
 				30841141192C1613002E4069 /* TestHeader.xib */,
 				30841142192C1613002E4069 /* TestPanel3.xib */,
 				30841143192C1613002E4069 /* Toronto, ON.jpg */,
@@ -336,7 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */,
-				30841149192C1613002E4069 /* MYViewController.m in Sources */,
+				30841149192C1613002E4069 /* IntroductionController.m in Sources */,
 				30841126192C0BF6002E4069 /* ViolationQueryViewController.m in Sources */,
 				30841105192C0B01002E4069 /* AppDelegate.m in Sources */,
 				30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */,
