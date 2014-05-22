@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "MYBlurIntroductionView.h"
 
-@interface ViolationQueryViewController : BaseViewController
+@interface ViolationQueryViewController : BaseViewController<MYIntroductionDelegate>
 
 @end

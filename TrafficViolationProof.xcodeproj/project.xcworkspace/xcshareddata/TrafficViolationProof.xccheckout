@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>98B6237E-6EEE-4543-B506-0863AF2D22E5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TrafficViolationProof</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>36672A8C-32AF-47CF-AD61-9D75B349734D</key>
+		<string>https://github.com/ramonqlee-lib/TrafficViolationProof_iOS.git</string>
+		<key>BC1F58D9-723A-4B64-BB01-12C19688BD2F</key>
+		<string>https://github.com/ramonqlee1980/SwipeProjectTempl.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TrafficViolationProof.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>36672A8C-32AF-47CF-AD61-9D75B349734D</key>
+		<string>../..</string>
+		<key>BC1F58D9-723A-4B64-BB01-12C19688BD2F</key>
+		<string>../../../../iOS_Lib</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ramonqlee-lib/TrafficViolationProof_iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>36672A8C-32AF-47CF-AD61-9D75B349734D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BC1F58D9-723A-4B64-BB01-12C19688BD2F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS_Lib</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>36672A8C-32AF-47CF-AD61-9D75B349734D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TrafficViolationProof</string>
+		</dict>
+	</array>
+</dict>
+</plist>

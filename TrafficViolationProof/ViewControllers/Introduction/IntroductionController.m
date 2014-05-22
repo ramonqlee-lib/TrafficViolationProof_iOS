@@ -83,12 +83,13 @@
 }
 
 //引导界面结束，正式进入主界面
--(void)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType {
+-(BOOL)introduction:(MYBlurIntroductionView *)introductionView didFinishWithType:(MYFinishType)finishType {
     NSLog(@"Introduction did finish");
     AppDelegate* delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     if (delegate) {
         [delegate startMainUIWithTabbar];
     }
+    return YES;
 }
 
 @end

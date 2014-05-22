@@ -7,8 +7,9 @@
 //
 
 #import "ViolationQueryViewController.h"
+#import "EScrollerView.h"
 
-@interface ViolationQueryViewController ()
+@interface ViolationQueryViewController ()<EScrollerViewDelegate>
 
 @end
 
@@ -27,7 +28,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initViews];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,10 +52,22 @@
 //顶部的view支持自定义自定义view插入；
 -(void)initViews
 {
-    UITextView* placeHolderTextView = [[UITextView alloc]initWithFrame:self.view.frame];
-    placeHolderTextView.text = @"正在开发，优先级 1";
-    
-    [[self baseView] addSubview:placeHolderTextView];
+    NSMutableArray* viewArray = [[NSMutableArray alloc]initWithCapacity:3];
+    for (int i =1; i<4; ++i) {
+        NSString* imageName = [NSString stringWithFormat:@"%d.jpg",i];
+        UIImageView* imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName ]];
+        [viewArray addObject:imageView];
+    }
+    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 0, self.view.frame.size.width, 150)
+                                                           ViewArray:viewArray];
+    scroller.delegate=self;
+    [self.view addSubview:scroller];
+}
+
+#pragma mark - MYIntroduction Delegate
+-(void)EScrollerViewDidClicked:(NSUInteger)index
+{
+    NSLog(@"index--%d",index);
 }
 
 @end
