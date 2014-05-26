@@ -12,6 +12,8 @@
 		3080B2B7192EB9640024C641 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2B4192EB9640024C641 /* 1.jpg */; };
 		3080B2B8192EB9640024C641 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2B5192EB9640024C641 /* 2.jpg */; };
 		3080B2B9192EB9640024C641 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2B6192EB9640024C641 /* 3.jpg */; };
+		3080B2BD1933FD660024C641 /* RCDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B2BC1933FD660024C641 /* RCDraggableButton.m */; };
+		3080B2C11933FFAA0024C641 /* vehicle_manage_icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2C01933FFAA0024C641 /* vehicle_manage_icon.jpeg */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -60,6 +62,9 @@
 		3080B2B4192EB9640024C641 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		3080B2B5192EB9640024C641 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		3080B2B6192EB9640024C641 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		3080B2BB1933FD660024C641 /* RCDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDraggableButton.h; sourceTree = "<group>"; };
+		3080B2BC1933FD660024C641 /* RCDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDraggableButton.m; sourceTree = "<group>"; };
+		3080B2C01933FFAA0024C641 /* vehicle_manage_icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vehicle_manage_icon.jpeg; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,11 +144,21 @@
 		3080B2B3192EB9640024C641 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3080B2C01933FFAA0024C641 /* vehicle_manage_icon.jpeg */,
 				3080B2B4192EB9640024C641 /* 1.jpg */,
 				3080B2B5192EB9640024C641 /* 2.jpg */,
 				3080B2B6192EB9640024C641 /* 3.jpg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		3080B2BA1933FD660024C641 /* RCDraggableButton */ = {
+			isa = PBXGroup;
+			children = (
+				3080B2BB1933FD660024C641 /* RCDraggableButton.h */,
+				3080B2BC1933FD660024C641 /* RCDraggableButton.m */,
+			);
+			path = RCDraggableButton;
 			sourceTree = "<group>";
 		};
 		308410E8192C0B01002E4069 = {
@@ -258,6 +273,7 @@
 		3084114F192C1661002E4069 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3080B2BA1933FD660024C641 /* RCDraggableButton */,
 				3080B2AF192EB8D30024C641 /* EScrollerView */,
 				30841150192C1675002E4069 /* MYBlurIntroductionView */,
 			);
@@ -364,6 +380,7 @@
 				3084114B192C1613002E4069 /* TestPanel3.xib in Resources */,
 				30841145192C1613002E4069 /* ForkImage.png in Resources */,
 				30841148192C1613002E4069 /* MYCustomPanel.xib in Resources */,
+				3080B2C11933FFAA0024C641 /* vehicle_manage_icon.jpeg in Resources */,
 				308410FF192C0B01002E4069 /* InfoPlist.strings in Resources */,
 				3084114A192C1613002E4069 /* TestHeader.xib in Resources */,
 				30841107192C0B01002E4069 /* Images.xcassets in Resources */,
@@ -392,6 +409,7 @@
 				30841149192C1613002E4069 /* IntroductionController.m in Sources */,
 				30841126192C0BF6002E4069 /* ViolationQueryViewController.m in Sources */,
 				3084115C192D5C8E002E4069 /* AntiCameraViewController.m in Sources */,
+				3080B2BD1933FD660024C641 /* RCDraggableButton.m in Sources */,
 				30841105192C0B01002E4069 /* AppDelegate.m in Sources */,
 				30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */,
 				30841147192C1613002E4069 /* MYCustomPanel.m in Sources */,
