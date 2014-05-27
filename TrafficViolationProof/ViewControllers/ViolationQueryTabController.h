@@ -10,6 +10,6 @@
 #import "BaseViewController.h"
 #import "MYBlurIntroductionView.h"
 
-@interface ViolationQueryViewController : BaseViewController<MYIntroductionDelegate>
+@interface ViolationQueryTabController : BaseViewController<MYIntroductionDelegate>
 
 @end

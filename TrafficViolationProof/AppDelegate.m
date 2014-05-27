@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViolationQueryViewController.h"
+#import "ViolationQueryTabController.h"
 #import "AboutViewController.h"
 #import "IntroductionController.h"
 #import "AntiCameraViewController.h"
@@ -74,7 +74,7 @@
 
 -(void)startMainUIWithTabbar
 {
-    ViolationQueryViewController* violationController = [ViolationQueryViewController new];
+    ViolationQueryTabController* violationController = [ViolationQueryTabController new];
     AboutViewController* aboutController = [AboutViewController new];
     AntiCameraViewController* antiCamera = [AntiCameraViewController new];
     ViolationHistoryViewController* history = [ViolationHistoryViewController new];

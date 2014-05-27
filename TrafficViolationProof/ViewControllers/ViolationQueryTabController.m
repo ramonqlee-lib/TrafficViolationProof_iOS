@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 iDreems. All rights reserved.
 //
 
-#import "ViolationQueryViewController.h"
+#import "ViolationQueryTabController.h"
 #import "EScrollerView.h"
 #import "RCDraggableButton.h"
 
-@interface ViolationQueryViewController ()<EScrollerViewDelegate>
+@interface ViolationQueryTabController ()<EScrollerViewDelegate>
 
 @end
 
-@implementation ViolationQueryViewController
+@implementation ViolationQueryTabController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,7 +54,7 @@
 -(void)initViews
 {
     //TODO:本模块的功能
-    //1.悬浮的添加按钮：用于添加新车辆(初始在第一个车牌的位置，可以自由拖动)(P1)
+    //1.悬浮的添加按钮：用于添加新车辆(初始在第一个车牌的位置，可以自由拖动)(P1-done)
     //2.车辆信息管理界面：添加车辆，修改车辆，删除车辆等功能；(P2-添加一个占位页)
     //3.违章查询的展示界面：违章的展示（上部分自动根据查询城市，展示天气信息，背景图片考虑来自google）(P3)
     //4.附近违章；违章排行（sohu违章查询）(P5-待技术调研)
@@ -92,6 +92,7 @@
     NSLog(@"index--%d",index);
 }
 #pragma init methods
+
 -(void)addVehicle
 {
     //TODO::记录上次拖动的位置，然后在下次使用

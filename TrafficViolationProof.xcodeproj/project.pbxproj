@@ -14,6 +14,8 @@
 		3080B2B9192EB9640024C641 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2B6192EB9640024C641 /* 3.jpg */; };
 		3080B2BD1933FD660024C641 /* RCDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B2BC1933FD660024C641 /* RCDraggableButton.m */; };
 		3080B2C11933FFAA0024C641 /* vehicle_manage_icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2C01933FFAA0024C641 /* vehicle_manage_icon.jpeg */; };
+		3080B2C5193401120024C641 /* VehicleManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B2C4193401120024C641 /* VehicleManageController.m */; };
+		3080B2C81934013F0024C641 /* ViolationDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B2C71934013F0024C641 /* ViolationDetailController.m */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -26,7 +28,7 @@
 		30841110192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
 		30841118192C0B01002E4069 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30841116192C0B01002E4069 /* InfoPlist.strings */; };
 		3084111A192C0B01002E4069 /* TrafficViolationProofTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841119192C0B01002E4069 /* TrafficViolationProofTests.m */; };
-		30841126192C0BF6002E4069 /* ViolationQueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841125192C0BF6002E4069 /* ViolationQueryViewController.m */; };
+		30841126192C0BF6002E4069 /* ViolationQueryTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841125192C0BF6002E4069 /* ViolationQueryTabController.m */; };
 		30841129192C0C13002E4069 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30841128192C0C13002E4069 /* AboutViewController.m */; };
 		30841144192C1613002E4069 /* CheckMarkWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 30841139192C1613002E4069 /* CheckMarkWhite.png */; };
 		30841145192C1613002E4069 /* ForkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3084113A192C1613002E4069 /* ForkImage.png */; };
@@ -65,6 +67,10 @@
 		3080B2BB1933FD660024C641 /* RCDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDraggableButton.h; sourceTree = "<group>"; };
 		3080B2BC1933FD660024C641 /* RCDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDraggableButton.m; sourceTree = "<group>"; };
 		3080B2C01933FFAA0024C641 /* vehicle_manage_icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vehicle_manage_icon.jpeg; sourceTree = "<group>"; };
+		3080B2C3193401120024C641 /* VehicleManageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleManageController.h; sourceTree = "<group>"; };
+		3080B2C4193401120024C641 /* VehicleManageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleManageController.m; sourceTree = "<group>"; };
+		3080B2C61934013F0024C641 /* ViolationDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationDetailController.h; sourceTree = "<group>"; };
+		3080B2C71934013F0024C641 /* ViolationDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationDetailController.m; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,8 +87,8 @@
 		30841115192C0B01002E4069 /* TrafficViolationProofTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrafficViolationProofTests-Info.plist"; sourceTree = "<group>"; };
 		30841117192C0B01002E4069 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30841119192C0B01002E4069 /* TrafficViolationProofTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrafficViolationProofTests.m; sourceTree = "<group>"; };
-		30841124192C0BF6002E4069 /* ViolationQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationQueryViewController.h; sourceTree = "<group>"; };
-		30841125192C0BF6002E4069 /* ViolationQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationQueryViewController.m; sourceTree = "<group>"; };
+		30841124192C0BF6002E4069 /* ViolationQueryTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationQueryTabController.h; sourceTree = "<group>"; };
+		30841125192C0BF6002E4069 /* ViolationQueryTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationQueryTabController.m; sourceTree = "<group>"; };
 		30841127192C0C13002E4069 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		30841128192C0C13002E4069 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		30841139192C1613002E4069 /* CheckMarkWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckMarkWhite.png; sourceTree = "<group>"; };
@@ -161,6 +167,17 @@
 			path = RCDraggableButton;
 			sourceTree = "<group>";
 		};
+		3080B2C2193400F80024C641 /* ViolationQuery */ = {
+			isa = PBXGroup;
+			children = (
+				3080B2C3193401120024C641 /* VehicleManageController.h */,
+				3080B2C4193401120024C641 /* VehicleManageController.m */,
+				3080B2C61934013F0024C641 /* ViolationDetailController.h */,
+				3080B2C71934013F0024C641 /* ViolationDetailController.m */,
+			);
+			path = ViolationQuery;
+			sourceTree = "<group>";
+		};
 		308410E8192C0B01002E4069 = {
 			isa = PBXGroup;
 			children = (
@@ -237,9 +254,10 @@
 		30841123192C0B73002E4069 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3080B2C2193400F80024C641 /* ViolationQuery */,
 				30841138192C1613002E4069 /* Introduction */,
-				30841124192C0BF6002E4069 /* ViolationQueryViewController.h */,
-				30841125192C0BF6002E4069 /* ViolationQueryViewController.m */,
+				30841124192C0BF6002E4069 /* ViolationQueryTabController.h */,
+				30841125192C0BF6002E4069 /* ViolationQueryTabController.m */,
 				30841127192C0C13002E4069 /* AboutViewController.h */,
 				30841128192C0C13002E4069 /* AboutViewController.m */,
 				3084115A192D5C8E002E4069 /* AntiCameraViewController.h */,
@@ -405,11 +423,13 @@
 			files = (
 				30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */,
 				3026C4C8192D606C00A1E1EF /* BaseViewController.m in Sources */,
+				3080B2C81934013F0024C641 /* ViolationDetailController.m in Sources */,
 				3080B2B2192EB8D30024C641 /* EScrollerView.m in Sources */,
 				30841149192C1613002E4069 /* IntroductionController.m in Sources */,
-				30841126192C0BF6002E4069 /* ViolationQueryViewController.m in Sources */,
+				30841126192C0BF6002E4069 /* ViolationQueryTabController.m in Sources */,
 				3084115C192D5C8E002E4069 /* AntiCameraViewController.m in Sources */,
 				3080B2BD1933FD660024C641 /* RCDraggableButton.m in Sources */,
+				3080B2C5193401120024C641 /* VehicleManageController.m in Sources */,
 				30841105192C0B01002E4069 /* AppDelegate.m in Sources */,
 				30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */,
 				30841147192C1613002E4069 /* MYCustomPanel.m in Sources */,
