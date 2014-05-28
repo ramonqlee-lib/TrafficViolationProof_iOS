@@ -9,6 +9,7 @@
 #import "ViolationQueryTabController.h"
 #import "EScrollerView.h"
 #import "RCDraggableButton.h"
+#import "SQLiteManager.h"
 
 @interface ViolationQueryTabController ()<EScrollerViewDelegate>
 
@@ -84,6 +85,8 @@
                                                            ViewArray:viewArray];
     scroller.delegate=self;
     [self.view addSubview:scroller];
+    
+    [self initVehiclesView];
 }
 
 #pragma mark - MYIntroduction Delegate
@@ -92,7 +95,7 @@
     NSLog(@"index--%d",index);
 }
 #pragma init methods
-
+//弹出添加车辆界面
 -(void)addVehicle
 {
     //TODO::记录上次拖动的位置，然后在下次使用
@@ -119,6 +122,14 @@
         //TODO::在此记录拖动后的位置
         
     }];
+}
+//TODO::显示车辆列表
+-(void)initVehiclesView
+{
+    //TODO::读取车辆信息，通过tableview进行显示
+    //1.车辆信息的管理
+    //2.tableview delegate和datasource的独立处理
+    
 }
 
 @end
