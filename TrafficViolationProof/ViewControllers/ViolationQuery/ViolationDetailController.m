@@ -7,6 +7,7 @@
 //
 
 #import "ViolationDetailController.h"
+#import "UIBarButtonItem+Customed.h"
 
 @interface ViolationDetailController ()
 
@@ -27,6 +28,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"违章";
+    
+    UIBarButtonItem *button =
+    [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"top_navigation_back.png"]
+                        selectedImage:[UIImage imageNamed:@"top_navigation_back.png"]
+                               target:self
+                               action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = button;
+    
+    //TODO::查询违章后，显示违章
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,6 +45,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -45,5 +57,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)back
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

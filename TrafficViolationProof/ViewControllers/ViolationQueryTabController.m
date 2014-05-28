@@ -10,6 +10,7 @@
 #import "EScrollerView.h"
 #import "RCDraggableButton.h"
 #import "SQLiteManager.h"
+#import "ViolationQuery/ViolationDetailController.h"
 
 #define kTopCoverFlowHeight 150
 
@@ -66,7 +67,7 @@
     //5.2 今日油价
     //5.3 北京地区：今日限号（非限号地区不显示）
     //5.4 其他封推广告(来自广告sdk)
-    [self addVehicle];
+    
     //FIXME:测试一下
     NSMutableArray* viewArray = [[[NSMutableArray alloc]initWithCapacity:3]autorelease];
     for (int i =1; i<4; ++i) {
@@ -89,6 +90,8 @@
     [self.view addSubview:scroller];
     
     [self initVehiclesView];
+    
+    [self addVehicle];
 }
 
 #pragma mark - MYIntroduction Delegate
@@ -104,7 +107,7 @@
     //考虑键值对的通用存储
     
     //TODO::在此提取拖动后的位置使用（有个初始值）
-    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInKeyWindowWithFrame:CGRectMake(0, 400, 50, 50)];
+    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(0, 400, 50, 50)];
     [avatar setBackgroundImage:[UIImage imageNamed:@"vehicle_manage_icon.jpeg"] forState:UIControlStateNormal];
     
     [avatar setLongPressBlock:^(RCDraggableButton *avatar) {
@@ -128,7 +131,7 @@
 //TODO::显示车辆列表
 -(void)initVehiclesView
 {
-    //TODO::读取车辆信息，通过tableview进行显示
+    //::读取车辆信息，通过tableview进行显示
     //1.车辆信息的管理
     //2.tableview delegate和datasource的独立处理
     CGRect rc=self.view.frame;
@@ -147,7 +150,13 @@
 #pragma mark tableview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TODO::跳转到对应车辆的违章查询界面
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //::跳转到对应车辆的违章查询界面
+    UIViewController* tmp = [[[ViolationDetailController alloc]init]autorelease];
+    UINavigationController* navi = [[[UINavigationController alloc]initWithRootViewController:tmp]autorelease];
+    
+    [self.parentViewController presentViewController:navi animated:YES completion:nil];
 }
 #pragma mark tableview datasource
 

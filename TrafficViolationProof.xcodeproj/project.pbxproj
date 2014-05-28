@@ -48,6 +48,9 @@
 		3080B37B1936943F0024C641 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080B37A1936943F0024C641 /* libz.dylib */; };
 		3080B37D193694440024C641 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080B37C193694440024C641 /* libsqlite3.dylib */; };
 		3080B380193694CE0024C641 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B37F193694CE0024C641 /* Vehicle.m */; };
+		3080B3821936A0270024C641 /* night_top_navigation_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3811936A0270024C641 /* night_top_navigation_back.png */; };
+		3080B3871936A0520024C641 /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3841936A0520024C641 /* top_navigation_back@2x.png */; };
+		3080B3881936A0520024C641 /* UIBarButtonItem+Customed.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3861936A0520024C641 /* UIBarButtonItem+Customed.m */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -170,6 +173,10 @@
 		3080B37C193694440024C641 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3080B37E193694CE0024C641 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
 		3080B37F193694CE0024C641 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
+		3080B3811936A0270024C641 /* night_top_navigation_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night_top_navigation_back.png; sourceTree = "<group>"; };
+		3080B3841936A0520024C641 /* top_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_back@2x.png"; sourceTree = "<group>"; };
+		3080B3851936A0520024C641 /* UIBarButtonItem+Customed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Customed.h"; sourceTree = "<group>"; };
+		3080B3861936A0520024C641 /* UIBarButtonItem+Customed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Customed.m"; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -251,6 +258,7 @@
 		3080B2B3192EB9640024C641 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3080B3811936A0270024C641 /* night_top_navigation_back.png */,
 				3080B2C01933FFAA0024C641 /* vehicle_manage_icon.jpeg */,
 				3080B2B4192EB9640024C641 /* 1.jpg */,
 				3080B2B5192EB9640024C641 /* 2.jpg */,
@@ -399,6 +407,17 @@
 			path = ../../../../iOS_Lib/StringUtils;
 			sourceTree = "<group>";
 		};
+		3080B3831936A0520024C641 /* CustomNaviBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3841936A0520024C641 /* top_navigation_back@2x.png */,
+				3080B3851936A0520024C641 /* UIBarButtonItem+Customed.h */,
+				3080B3861936A0520024C641 /* UIBarButtonItem+Customed.m */,
+			);
+			name = CustomNaviBarButton;
+			path = ../../../../iOS_Lib/CustomNaviBarButton;
+			sourceTree = "<group>";
+		};
 		308410E8192C0B01002E4069 = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +534,7 @@
 		3084114F192C1661002E4069 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3080B3831936A0520024C641 /* CustomNaviBarButton */,
 				3080B36D193553950024C641 /* StringUtils */,
 				3080B365193552220024C641 /* SQLiteManager */,
 				3080B31719354D200024C641 /* ASIHTTPRequest */,
@@ -626,9 +646,11 @@
 				30841145192C1613002E4069 /* ForkImage.png in Resources */,
 				30841148192C1613002E4069 /* MYCustomPanel.xib in Resources */,
 				3080B2C11933FFAA0024C641 /* vehicle_manage_icon.jpeg in Resources */,
+				3080B3821936A0270024C641 /* night_top_navigation_back.png in Resources */,
 				308410FF192C0B01002E4069 /* InfoPlist.strings in Resources */,
 				3084114A192C1613002E4069 /* TestHeader.xib in Resources */,
 				30841107192C0B01002E4069 /* Images.xcassets in Resources */,
+				3080B3871936A0520024C641 /* top_navigation_back@2x.png in Resources */,
 				3080B2B7192EB9640024C641 /* 1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +698,7 @@
 				3080B2BD1933FD660024C641 /* RCDraggableButton.m in Sources */,
 				3080B2C5193401120024C641 /* VehicleManageController.m in Sources */,
 				3080B36419354D200024C641 /* ASIS3ServiceRequest.m in Sources */,
+				3080B3881936A0520024C641 /* UIBarButtonItem+Customed.m in Sources */,
 				3080B35419354D200024C641 /* ASIInputStream.m in Sources */,
 				30841105192C0B01002E4069 /* AppDelegate.m in Sources */,
 				3080B35719354D200024C641 /* ASICloudFilesCDNRequest.m in Sources */,
