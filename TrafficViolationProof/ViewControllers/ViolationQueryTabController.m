@@ -11,7 +11,9 @@
 #import "RCDraggableButton.h"
 #import "SQLiteManager.h"
 
-@interface ViolationQueryTabController ()<EScrollerViewDelegate>
+#define kTopCoverFlowHeight 150
+
+@interface ViolationQueryTabController ()<EScrollerViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -39,15 +41,15 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark initViews
 //TODO::初始化页面布局，顶部一个可滑动的view；底下一个tableview
@@ -80,8 +82,8 @@
         [viewArray addObject:labelView];
         [labelView release];
     }
-
-    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 0, self.view.frame.size.width, 150)
+    
+    EScrollerView *scroller=[[EScrollerView alloc] initWithFrameRect:CGRectMake(0, 0, self.view.frame.size.width, kTopCoverFlowHeight)
                                                            ViewArray:viewArray];
     scroller.delegate=self;
     [self.view addSubview:scroller];
@@ -129,7 +131,46 @@
     //TODO::读取车辆信息，通过tableview进行显示
     //1.车辆信息的管理
     //2.tableview delegate和datasource的独立处理
+    CGRect rc=self.view.frame;
+    rc.origin.y = kTopCoverFlowHeight;
+    rc.size.height -= kTopCoverFlowHeight;
+    //是否有tabbar
+    if (self.tabBarController) {
+        rc.size.height -= self.tabBarController.tabBar.frame.size.height;
+    }
+    UITableView* vehicleTableView = [[[UITableView alloc]initWithFrame:rc]autorelease];
+    vehicleTableView.delegate = self;
+    vehicleTableView.dataSource = self;
     
+    [self.view addSubview:vehicleTableView];
+}
+#pragma mark tableview delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //TODO::跳转到对应车辆的违章查询界面
+}
+#pragma mark tableview datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    //TODO::待读取车辆信息
+    return 10;
 }
 
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString* kCellIdentifier = @"RMTableCellImageTwinTextType";
+    //TODO::按照车辆信息，初始化cell
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"第 %d 车辆",indexPath.row];
+    
+    return  cell;
+}
 @end

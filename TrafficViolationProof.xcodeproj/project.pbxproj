@@ -47,6 +47,7 @@
 		3080B379193553950024C641 /* StringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B375193553950024C641 /* StringUtil.m */; };
 		3080B37B1936943F0024C641 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080B37A1936943F0024C641 /* libz.dylib */; };
 		3080B37D193694440024C641 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080B37C193694440024C641 /* libsqlite3.dylib */; };
+		3080B380193694CE0024C641 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B37F193694CE0024C641 /* Vehicle.m */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -167,6 +168,8 @@
 		3080B375193553950024C641 /* StringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtil.m; sourceTree = "<group>"; };
 		3080B37A1936943F0024C641 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3080B37C193694440024C641 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3080B37E193694CE0024C641 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		3080B37F193694CE0024C641 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -374,6 +377,8 @@
 			children = (
 				3080B36A193552DA0024C641 /* RMAppData.h */,
 				3080B36B193552DA0024C641 /* RMAppData.m */,
+				3080B37E193694CE0024C641 /* Vehicle.h */,
+				3080B37F193694CE0024C641 /* Vehicle.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				30841149192C1613002E4069 /* IntroductionController.m in Sources */,
 				30841126192C0BF6002E4069 /* ViolationQueryTabController.m in Sources */,
 				3080B36319354D200024C641 /* ASIS3Request.m in Sources */,
+				3080B380193694CE0024C641 /* Vehicle.m in Sources */,
 				3080B35519354D200024C641 /* ASINetworkQueue.m in Sources */,
 				3080B35219354D200024C641 /* ASIFormDataRequest.m in Sources */,
 				3080B35019354D200024C641 /* ASIDataDecompressor.m in Sources */,
