@@ -51,6 +51,21 @@
 		3080B3821936A0270024C641 /* night_top_navigation_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3811936A0270024C641 /* night_top_navigation_back.png */; };
 		3080B3871936A0520024C641 /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3841936A0520024C641 /* top_navigation_back@2x.png */; };
 		3080B3881936A0520024C641 /* UIBarButtonItem+Customed.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3861936A0520024C641 /* UIBarButtonItem+Customed.m */; };
+		3080B38B1937E8A80024C641 /* Penalty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B38A1937E8A80024C641 /* Penalty.m */; };
+		3080B38E1937E8B90024C641 /* ViolationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B38D1937E8B90024C641 /* ViolationResult.m */; };
+		3080B3931937E9C80024C641 /* ViolationQueryProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3921937E9C80024C641 /* ViolationQueryProtocol.m */; };
+		3080B3971937EB470024C641 /* HTTPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3961937EB470024C641 /* HTTPHelper.m */; };
+		3080B39C1937ECEC0024C641 /* CommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3991937ECEC0024C641 /* CommonHelper.m */; };
+		3080B39D1937ECEC0024C641 /* FileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B39B1937ECEC0024C641 /* FileModel.m */; };
+		3080B3B11937ED320024C641 /* RARExtractException.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3A01937ED320024C641 /* RARExtractException.m */; };
+		3080B3B21937ED320024C641 /* Unrar4iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080B3A11937ED320024C641 /* Unrar4iOS.framework */; };
+		3080B3B31937ED330024C641 /* Unrar4iOSEx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3A31937ED320024C641 /* Unrar4iOSEx.mm */; };
+		3080B3B41937ED330024C641 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3A71937ED320024C641 /* ioapi.c */; };
+		3080B3B51937ED330024C641 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3A91937ED320024C641 /* mztools.c */; };
+		3080B3B61937ED330024C641 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3AB1937ED320024C641 /* unzip.c */; };
+		3080B3B71937ED330024C641 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3AD1937ED320024C641 /* zip.c */; };
+		3080B3B81937ED330024C641 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3B01937ED320024C641 /* ZipArchive.mm */; };
+		3080B3BC1937EDBD0024C641 /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080B3BB1937EDBD0024C641 /* libFlurry_4.3.2.a */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -177,6 +192,38 @@
 		3080B3841936A0520024C641 /* top_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_back@2x.png"; sourceTree = "<group>"; };
 		3080B3851936A0520024C641 /* UIBarButtonItem+Customed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Customed.h"; sourceTree = "<group>"; };
 		3080B3861936A0520024C641 /* UIBarButtonItem+Customed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Customed.m"; sourceTree = "<group>"; };
+		3080B3891937E8A80024C641 /* Penalty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Penalty.h; path = ../ViewControllers/ViolationQuery/Penalty.h; sourceTree = "<group>"; };
+		3080B38A1937E8A80024C641 /* Penalty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Penalty.m; path = ../ViewControllers/ViolationQuery/Penalty.m; sourceTree = "<group>"; };
+		3080B38C1937E8B90024C641 /* ViolationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViolationResult.h; path = ../ViewControllers/ViolationQuery/ViolationResult.h; sourceTree = "<group>"; };
+		3080B38D1937E8B90024C641 /* ViolationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViolationResult.m; path = ../ViewControllers/ViolationQuery/ViolationResult.m; sourceTree = "<group>"; };
+		3080B38F1937E8D60024C641 /* Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Protocol.h; path = ../ViewControllers/ViolationQuery/Protocol.h; sourceTree = "<group>"; };
+		3080B3911937E9C80024C641 /* ViolationQueryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationQueryProtocol.h; sourceTree = "<group>"; };
+		3080B3921937E9C80024C641 /* ViolationQueryProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationQueryProtocol.m; sourceTree = "<group>"; };
+		3080B3951937EB470024C641 /* HTTPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPHelper.h; sourceTree = "<group>"; };
+		3080B3961937EB470024C641 /* HTTPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPHelper.m; sourceTree = "<group>"; };
+		3080B3981937ECEC0024C641 /* CommonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHelper.h; sourceTree = "<group>"; };
+		3080B3991937ECEC0024C641 /* CommonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonHelper.m; sourceTree = "<group>"; };
+		3080B39A1937ECEC0024C641 /* FileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileModel.h; sourceTree = "<group>"; };
+		3080B39B1937ECEC0024C641 /* FileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileModel.m; sourceTree = "<group>"; };
+		3080B39F1937ED320024C641 /* RARExtractException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RARExtractException.h; sourceTree = "<group>"; };
+		3080B3A01937ED320024C641 /* RARExtractException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RARExtractException.m; sourceTree = "<group>"; };
+		3080B3A11937ED320024C641 /* Unrar4iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Unrar4iOS.framework; sourceTree = "<group>"; };
+		3080B3A21937ED320024C641 /* Unrar4iOSEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unrar4iOSEx.h; sourceTree = "<group>"; };
+		3080B3A31937ED320024C641 /* Unrar4iOSEx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Unrar4iOSEx.mm; sourceTree = "<group>"; };
+		3080B3A61937ED320024C641 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		3080B3A71937ED320024C641 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		3080B3A81937ED320024C641 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		3080B3A91937ED320024C641 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		3080B3AA1937ED320024C641 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		3080B3AB1937ED320024C641 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		3080B3AC1937ED320024C641 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		3080B3AD1937ED320024C641 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		3080B3AE1937ED320024C641 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		3080B3AF1937ED320024C641 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		3080B3B01937ED320024C641 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		3080B3BA1937EDBD0024C641 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		3080B3BB1937EDBD0024C641 /* libFlurry_4.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.2.a; sourceTree = "<group>"; };
+		3080B3BD1937EDF50024C641 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -229,7 +276,9 @@
 				3080B37B1936943F0024C641 /* libz.dylib in Frameworks */,
 				308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */,
 				308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */,
+				3080B3B21937ED320024C641 /* Unrar4iOS.framework in Frameworks */,
 				308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */,
+				3080B3BC1937EDBD0024C641 /* libFlurry_4.3.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,10 +432,14 @@
 		3080B369193552DA0024C641 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3080B36A193552DA0024C641 /* RMAppData.h */,
-				3080B36B193552DA0024C641 /* RMAppData.m */,
 				3080B37E193694CE0024C641 /* Vehicle.h */,
 				3080B37F193694CE0024C641 /* Vehicle.m */,
+				3080B3891937E8A80024C641 /* Penalty.h */,
+				3080B38A1937E8A80024C641 /* Penalty.m */,
+				3080B38C1937E8B90024C641 /* ViolationResult.h */,
+				3080B38D1937E8B90024C641 /* ViolationResult.m */,
+				3080B36A193552DA0024C641 /* RMAppData.h */,
+				3080B36B193552DA0024C641 /* RMAppData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +469,79 @@
 			);
 			name = CustomNaviBarButton;
 			path = ../../../../iOS_Lib/CustomNaviBarButton;
+			sourceTree = "<group>";
+		};
+		3080B3901937E9810024C641 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				3080B38F1937E8D60024C641 /* Protocol.h */,
+				3080B3911937E9C80024C641 /* ViolationQueryProtocol.h */,
+				3080B3921937E9C80024C641 /* ViolationQueryProtocol.m */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		3080B3941937EB470024C641 /* HttpHelper */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3BD1937EDF50024C641 /* Define.h */,
+				3080B3981937ECEC0024C641 /* CommonHelper.h */,
+				3080B3991937ECEC0024C641 /* CommonHelper.m */,
+				3080B39A1937ECEC0024C641 /* FileModel.h */,
+				3080B39B1937ECEC0024C641 /* FileModel.m */,
+				3080B3951937EB470024C641 /* HTTPHelper.h */,
+				3080B3961937EB470024C641 /* HTTPHelper.m */,
+			);
+			path = HttpHelper;
+			sourceTree = "<group>";
+		};
+		3080B39E1937ED320024C641 /* UnPackage */ = {
+			isa = PBXGroup;
+			children = (
+				3080B39F1937ED320024C641 /* RARExtractException.h */,
+				3080B3A01937ED320024C641 /* RARExtractException.m */,
+				3080B3A11937ED320024C641 /* Unrar4iOS.framework */,
+				3080B3A21937ED320024C641 /* Unrar4iOSEx.h */,
+				3080B3A31937ED320024C641 /* Unrar4iOSEx.mm */,
+				3080B3A41937ED320024C641 /* ZipArchive */,
+			);
+			path = UnPackage;
+			sourceTree = "<group>";
+		};
+		3080B3A41937ED320024C641 /* ZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3A51937ED320024C641 /* minizip */,
+				3080B3AF1937ED320024C641 /* ZipArchive.h */,
+				3080B3B01937ED320024C641 /* ZipArchive.mm */,
+			);
+			path = ZipArchive;
+			sourceTree = "<group>";
+		};
+		3080B3A51937ED320024C641 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3A61937ED320024C641 /* crypt.h */,
+				3080B3A71937ED320024C641 /* ioapi.c */,
+				3080B3A81937ED320024C641 /* ioapi.h */,
+				3080B3A91937ED320024C641 /* mztools.c */,
+				3080B3AA1937ED320024C641 /* mztools.h */,
+				3080B3AB1937ED320024C641 /* unzip.c */,
+				3080B3AC1937ED320024C641 /* unzip.h */,
+				3080B3AD1937ED320024C641 /* zip.c */,
+				3080B3AE1937ED320024C641 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		3080B3B91937EDBD0024C641 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3BA1937EDBD0024C641 /* Flurry.h */,
+				3080B3BB1937EDBD0024C641 /* libFlurry_4.3.2.a */,
+			);
+			name = Flurry;
+			path = "../../../../iOS_Lib/Flurry-iOS-4.3.2/Flurry";
 			sourceTree = "<group>";
 		};
 		308410E8192C0B01002E4069 = {
@@ -453,6 +579,7 @@
 		308410FA192C0B01002E4069 /* TrafficViolationProof */ = {
 			isa = PBXGroup;
 			children = (
+				3080B3901937E9810024C641 /* Net */,
 				3080B369193552DA0024C641 /* Model */,
 				3084114F192C1661002E4069 /* Libs */,
 				30841123192C0B73002E4069 /* ViewControllers */,
@@ -534,6 +661,9 @@
 		3084114F192C1661002E4069 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3080B3B91937EDBD0024C641 /* Flurry */,
+				3080B39E1937ED320024C641 /* UnPackage */,
+				3080B3941937EB470024C641 /* HttpHelper */,
 				3080B3831936A0520024C641 /* CustomNaviBarButton */,
 				3080B36D193553950024C641 /* StringUtils */,
 				3080B365193552220024C641 /* SQLiteManager */,
@@ -672,13 +802,16 @@
 			files = (
 				30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */,
 				3080B35D19354D200024C641 /* ASICloudFilesRequest.m in Sources */,
+				3080B3B61937ED330024C641 /* unzip.c in Sources */,
 				3080B35E19354D200024C641 /* ReachabilityAs.m in Sources */,
+				3080B38E1937E8B90024C641 /* ViolationResult.m in Sources */,
 				3080B36219354D200024C641 /* ASIS3ObjectRequest.m in Sources */,
 				3026C4C8192D606C00A1E1EF /* BaseViewController.m in Sources */,
 				3080B35B19354D200024C641 /* ASICloudFilesObject.m in Sources */,
 				3080B36119354D200024C641 /* ASIS3BucketRequest.m in Sources */,
 				3080B35C19354D200024C641 /* ASICloudFilesObjectRequest.m in Sources */,
 				3080B35119354D200024C641 /* ASIDownloadCache.m in Sources */,
+				3080B39D1937ECEC0024C641 /* FileModel.m in Sources */,
 				3080B2C81934013F0024C641 /* ViolationDetailController.m in Sources */,
 				3080B2B2192EB8D30024C641 /* EScrollerView.m in Sources */,
 				3080B36019354D200024C641 /* ASIS3BucketObject.m in Sources */,
@@ -697,24 +830,34 @@
 				3084115C192D5C8E002E4069 /* AntiCameraViewController.m in Sources */,
 				3080B2BD1933FD660024C641 /* RCDraggableButton.m in Sources */,
 				3080B2C5193401120024C641 /* VehicleManageController.m in Sources */,
+				3080B3B71937ED330024C641 /* zip.c in Sources */,
 				3080B36419354D200024C641 /* ASIS3ServiceRequest.m in Sources */,
 				3080B3881936A0520024C641 /* UIBarButtonItem+Customed.m in Sources */,
+				3080B39C1937ECEC0024C641 /* CommonHelper.m in Sources */,
+				3080B3B81937ED330024C641 /* ZipArchive.mm in Sources */,
 				3080B35419354D200024C641 /* ASIInputStream.m in Sources */,
 				30841105192C0B01002E4069 /* AppDelegate.m in Sources */,
+				3080B3B41937ED330024C641 /* ioapi.c in Sources */,
 				3080B35719354D200024C641 /* ASICloudFilesCDNRequest.m in Sources */,
 				3080B377193553950024C641 /* NSString+HTML.m in Sources */,
+				3080B38B1937E8A80024C641 /* Penalty.m in Sources */,
 				30841158192C1675002E4069 /* MYBlurIntroductionView.m in Sources */,
 				30841147192C1613002E4069 /* MYCustomPanel.m in Sources */,
 				3080B34F19354D200024C641 /* ASIDataCompressor.m in Sources */,
+				3080B3B51937ED330024C641 /* mztools.c in Sources */,
+				3080B3931937E9C80024C641 /* ViolationQueryProtocol.m in Sources */,
 				3080B35919354D200024C641 /* ASICloudFilesContainerRequest.m in Sources */,
 				3080B34E19354D200024C641 /* ASIAuthenticationDialog.m in Sources */,
 				3084115F192D5CD3002E4069 /* ViolationHistoryViewController.m in Sources */,
 				3080B35819354D200024C641 /* ASICloudFilesContainer.m in Sources */,
 				3080B35A19354D200024C641 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				3080B379193553950024C641 /* StringUtil.m in Sources */,
+				3080B3971937EB470024C641 /* HTTPHelper.m in Sources */,
 				30841129192C0C13002E4069 /* AboutViewController.m in Sources */,
 				30841101192C0B01002E4069 /* main.m in Sources */,
 				3080B378193553950024C641 /* NSString+StringThatFits.m in Sources */,
+				3080B3B11937ED320024C641 /* RARExtractException.m in Sources */,
+				3080B3B31937ED330024C641 /* Unrar4iOSEx.mm in Sources */,
 				30841157192C1675002E4069 /* AMBlurView.m in Sources */,
 				3080B376193553950024C641 /* GTMNSString+HTML.m in Sources */,
 			);
@@ -835,6 +978,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrafficViolationProof/Libs/UnPackage",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficViolationProof/TrafficViolationProof-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -844,6 +991,10 @@
 				);
 				INFOPLIST_FILE = "TrafficViolationProof/TrafficViolationProof-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/SSD/workspace/iOS_Lib/Flurry-iOS-4.3.2/Flurry",
+				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-ObjC",
@@ -861,6 +1012,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Ming Li (QBJ9PY6FYT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrafficViolationProof/Libs/UnPackage",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficViolationProof/TrafficViolationProof-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -870,6 +1025,10 @@
 				);
 				INFOPLIST_FILE = "TrafficViolationProof/TrafficViolationProof-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/SSD/workspace/iOS_Lib/Flurry-iOS-4.3.2/Flurry",
+				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-ObjC",

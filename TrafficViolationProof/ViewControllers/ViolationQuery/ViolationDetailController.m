@@ -8,6 +8,9 @@
 
 #import "ViolationDetailController.h"
 #import "UIBarButtonItem+Customed.h"
+#import "HTTPHelper.h"
+
+#define kTrafficQueryUrl @"http://trafficviolationproof.duapp.com/trafficquery.php"//查询违章
 
 @interface ViolationDetailController ()
 
@@ -38,6 +41,9 @@
     self.navigationItem.leftBarButtonItem = button;
     
     //TODO::查询违章后，显示违章
+    //右边菜单下拉列表
+    //中间展示违章列表（有可能为空）
+    [self startRequest];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,5 +68,35 @@
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
+#pragma mark http request and response
+-(void)startRequest
+{
+    //TODO::待添加查询违章请求数据
+    NSData* data = [@"134" dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getResult:) name:kTrafficQueryUrl object:nil];
+    [[HTTPHelper sharedInstance]beginPostRequest:kTrafficQueryUrl withData:data];
+}
 
+//TODO::根据从服务器获得的数据，更新本地数据
+-(void)getResult:(NSNotification*)notification
+{
+    if (notification && notification.object && ![notification.object isKindOfClass:[NSError class]]) {
+        if (!notification.userInfo || notification.userInfo.count==0) {
+            return;
+        }
+        
+        //parse ads and send notification
+//        AdsConfiguration* adsConfig = [AdsConfiguration sharedInstance];
+//        if(![adsConfig initWithJson:[notification.userInfo objectForKey:kSyncAdsJsonUrl]])
+//        {
+//            return;
+//        }
+        
+        //notify
+//        [[NSNotificationCenter defaultCenter]postNotificationName:kAdsConfigUpdated object:nil];
+//        
+//        [[NSNotificationCenter defaultCenter]removeObserver:self name:kSyncAdsJsonUrl object:nil];
+    }
+}
 @end
