@@ -9,6 +9,7 @@
 #import "ViolationQueryProtocol.h"
 #import "JSONKit.h"
 #import "Vehicle.h"
+#import "Penalty.h"
 
 static NSString* AREA = @"area";// 查询所在地区的违章
 static NSString* LICNUMBER = @"licNumber";// 车牌号
@@ -45,6 +46,77 @@ static NSString* FRAMENUMBER = @"frameNumber";// 车架号[部分地区必选]
 
 -(id)unpack:(NSData*) data
 {
-    return nil;
+    if (!_result) {
+        _result = [[ViolationResult alloc]init];
+    }
+    //解析json结构，获取违章信息
+    if (!data || data.length==0) {
+        return _result;
+    }
+    
+    JSONDecoder* decoder = [[[JSONDecoder alloc]init]autorelease];
+    const NSDictionary *ret = [decoder objectWithData:data];
+    NSLog(@"res= %@", ret);
+    const NSDictionary* summary = [ret objectForKey:@"@attributes"];
+    if (!summary) {
+        return _result;
+    }
+    
+    
+    _result.detail = [summary objectForKey:@"detail"];
+    _result.lastUpdateTime = [summary objectForKey:@"lastUpdateTime"];
+   
+    const NSDictionary* wz = [ret objectForKey:@"wz"];
+    if (!wz) {
+        return _result;
+    }
+    NSMutableArray* penalties = [[NSMutableArray alloc]init];
+    
+    if(!_result.penalties)
+    {
+        _result.penalties = penalties;
+    }
+    //array or only one
+    if ([wz isKindOfClass:[NSArray class]]) {
+        for (NSDictionary* item in wz) {
+            //parse wz one by one
+            id obj = [self parseWz:item];
+            if (obj) {
+                [penalties addObject:obj];
+            }
+        }
+    }
+    else
+    {
+        id obj = [self parseWz:wz];
+        if (obj) {
+            [penalties addObject:obj];
+        }
+    }
+    
+    return _result;
+}
+-(id)parseWz:(const NSDictionary*)item
+{
+    if (!item) {
+        return nil;
+    }
+    NSLog(@"%@",item);
+    const NSDictionary* wz = [item objectForKey:@"@attributes"];
+    if (!wz) {
+        return nil;
+    }
+    Penalty* p = [[[Penalty alloc]init]autorelease];
+    p.timeString = [wz objectForKey:@"time"];
+    p.locationString = [wz objectForKey:@"location"];
+    p.reasonString = [wz objectForKey:@"reason"];
+    p.fineString = [wz objectForKey:@"penalty"];
+    
+    p.licenceNumberString = [wz objectForKey:@"lpn"];
+    p.pointsString = [wz objectForKey:@"points"];
+    p.illegalCodeString = [wz objectForKey:@"wzid"];
+    p.tipString = [wz objectForKey:@"tip"];
+    
+    return p;
 }
 @end

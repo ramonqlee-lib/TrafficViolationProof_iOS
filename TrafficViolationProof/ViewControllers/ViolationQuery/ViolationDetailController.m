@@ -13,7 +13,7 @@
 #import "DESUtils.h"
 #import "ViolationQueryProtocol.h"
 #import "Vehicle.h"
-#import <zlib.h>
+#import "ViolationResult.h"
 
 #define kTrafficQueryUrl @"http://trafficviolationproof.duapp.com/trafficquery.php"//查询违章
 static NSString* DES_KEY =  @"ab345678";
@@ -93,7 +93,6 @@ static NSString*  DES_IV = @"12345678";
     
     //des only
     NSData* encryptedData = [orgData encryptUseDES:DES_KEY iv:DES_IV];
-    //des
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getResult:) name:kTrafficQueryUrl object:nil];
     [[HTTPHelper sharedInstance]beginPostRequest:kTrafficQueryUrl withData:encryptedData];
@@ -106,14 +105,10 @@ static NSString*  DES_IV = @"12345678";
         if (!notification.userInfo || notification.userInfo.count==0) {
             return;
         }
-        //d
         
-        //parse ads and send notification
-//        AdsConfiguration* adsConfig = [AdsConfiguration sharedInstance];
-//        if(![adsConfig initWithJson:[notification.userInfo objectForKey:kSyncAdsJsonUrl]])
-//        {
-//            return;
-//        }
+        //获取查询结果，并进行展示
+        ViolationQueryProtocol* protocol = [[[ViolationQueryProtocol alloc]init]autorelease];
+        ViolationResult* result = [protocol unpack:[notification.userInfo objectForKey:kTrafficQueryUrl] ];
         
         //notify
 //        [[NSNotificationCenter defaultCenter]postNotificationName:kAdsConfigUpdated object:nil];

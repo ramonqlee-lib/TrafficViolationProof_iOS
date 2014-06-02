@@ -10,4 +10,13 @@
 
 @interface Penalty : NSObject
 
+@property(nonatomic,copy)NSString* licenceNumberString;
+@property(nonatomic,copy)NSString* timeString;
+@property(nonatomic,copy)NSString* locationString;
+@property(nonatomic,copy)NSString* reasonString;
+@property(nonatomic,copy)NSString* fineString;
+@property(nonatomic,copy)NSString* pointsString;
+@property(nonatomic,copy)NSString* illegalCodeString;
+@property(nonatomic,copy)NSString* tipString;
+
 @end

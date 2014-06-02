@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrafficViolationProof/ViewControllers/ViolationQuery/ViolationDetailController.m"
-            timestampString = "423369893.405286"
+            timestampString = "423373991.325819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "-getResult:"
             landmarkType = "5">
          </BreakpointContent>
@@ -25,29 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrafficViolationProof/Libs/HttpHelper/HTTPHelper.m"
-            timestampString = "423369565.74734"
+            filePath = "TrafficViolationProof/Net/ViolationQueryProtocol.m"
+            timestampString = "423375849.339657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "-requestFinished:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrafficViolationProof/ViewControllers/ViolationQuery/ViolationDetailController.m"
-            timestampString = "423372072.316047"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-startRequest"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-unpack:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

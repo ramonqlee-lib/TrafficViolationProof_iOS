@@ -10,4 +10,8 @@
 
 @interface ViolationResult : NSObject
 
+@property(nonatomic,copy)NSString* detail;
+@property(nonatomic,copy)NSString* lastUpdateTime;
+@property(nonatomic,retain)NSArray* penalties;//Penalty array
+
 @end

@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Protocol.h"
+#import "ViolationResult.h"
 
 @interface ViolationQueryProtocol : NSObject  <Protocol>
+
+@property(nonatomic,readonly)ViolationResult* result;
 
 -(NSData*)pack:(id)vehicle;
 
 -(id)unpack:(NSData*) data;
+
+
 @end
