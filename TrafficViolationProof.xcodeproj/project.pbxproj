@@ -66,6 +66,9 @@
 		3080B3B71937ED330024C641 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3AD1937ED320024C641 /* zip.c */; };
 		3080B3B81937ED330024C641 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3B01937ED320024C641 /* ZipArchive.mm */; };
 		3080B3BC1937EDBD0024C641 /* libFlurry_4.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080B3BB1937EDBD0024C641 /* libFlurry_4.3.2.a */; };
+		3080B3C519394B6B0024C641 /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3C419394B6B0024C641 /* GZIP.m */; };
+		3080B3C919394CB00024C641 /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3C819394CB00024C641 /* DESUtils.m */; };
+		3080B3CD193C16AF0024C641 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3CC193C16AF0024C641 /* JSONKit.m */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -224,6 +227,12 @@
 		3080B3BA1937EDBD0024C641 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		3080B3BB1937EDBD0024C641 /* libFlurry_4.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.2.a; sourceTree = "<group>"; };
 		3080B3BD1937EDF50024C641 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		3080B3C319394B6B0024C641 /* GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZIP.h; sourceTree = "<group>"; };
+		3080B3C419394B6B0024C641 /* GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZIP.m; sourceTree = "<group>"; };
+		3080B3C719394CB00024C641 /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
+		3080B3C819394CB00024C641 /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
+		3080B3CB193C16AF0024C641 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		3080B3CC193C16AF0024C641 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -544,6 +553,36 @@
 			path = "../../../../iOS_Lib/Flurry-iOS-4.3.2/Flurry";
 			sourceTree = "<group>";
 		};
+		3080B3C219394B6B0024C641 /* GZIP */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3C319394B6B0024C641 /* GZIP.h */,
+				3080B3C419394B6B0024C641 /* GZIP.m */,
+			);
+			name = GZIP;
+			path = ../../../../iOS_Lib/GZIP;
+			sourceTree = "<group>";
+		};
+		3080B3C619394CB00024C641 /* Des */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3C719394CB00024C641 /* DESUtils.h */,
+				3080B3C819394CB00024C641 /* DESUtils.m */,
+			);
+			name = Des;
+			path = ../../../../iOS_Lib/Des;
+			sourceTree = "<group>";
+		};
+		3080B3CA193C16AF0024C641 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3CB193C16AF0024C641 /* JSONKit.h */,
+				3080B3CC193C16AF0024C641 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			path = ../../../../iOS_Lib/JSONKit;
+			sourceTree = "<group>";
+		};
 		308410E8192C0B01002E4069 = {
 			isa = PBXGroup;
 			children = (
@@ -661,6 +700,9 @@
 		3084114F192C1661002E4069 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3080B3CA193C16AF0024C641 /* JSONKit */,
+				3080B3C619394CB00024C641 /* Des */,
+				3080B3C219394B6B0024C641 /* GZIP */,
 				3080B3B91937EDBD0024C641 /* Flurry */,
 				3080B39E1937ED320024C641 /* UnPackage */,
 				3080B3941937EB470024C641 /* HttpHelper */,
@@ -806,6 +848,7 @@
 				3080B35E19354D200024C641 /* ReachabilityAs.m in Sources */,
 				3080B38E1937E8B90024C641 /* ViolationResult.m in Sources */,
 				3080B36219354D200024C641 /* ASIS3ObjectRequest.m in Sources */,
+				3080B3C519394B6B0024C641 /* GZIP.m in Sources */,
 				3026C4C8192D606C00A1E1EF /* BaseViewController.m in Sources */,
 				3080B35B19354D200024C641 /* ASICloudFilesObject.m in Sources */,
 				3080B36119354D200024C641 /* ASIS3BucketRequest.m in Sources */,
@@ -825,6 +868,7 @@
 				3080B36319354D200024C641 /* ASIS3Request.m in Sources */,
 				3080B380193694CE0024C641 /* Vehicle.m in Sources */,
 				3080B35519354D200024C641 /* ASINetworkQueue.m in Sources */,
+				3080B3C919394CB00024C641 /* DESUtils.m in Sources */,
 				3080B35219354D200024C641 /* ASIFormDataRequest.m in Sources */,
 				3080B35019354D200024C641 /* ASIDataDecompressor.m in Sources */,
 				3084115C192D5C8E002E4069 /* AntiCameraViewController.m in Sources */,
@@ -845,6 +889,7 @@
 				30841147192C1613002E4069 /* MYCustomPanel.m in Sources */,
 				3080B34F19354D200024C641 /* ASIDataCompressor.m in Sources */,
 				3080B3B51937ED330024C641 /* mztools.c in Sources */,
+				3080B3CD193C16AF0024C641 /* JSONKit.m in Sources */,
 				3080B3931937E9C80024C641 /* ViolationQueryProtocol.m in Sources */,
 				3080B35919354D200024C641 /* ASICloudFilesContainerRequest.m in Sources */,
 				3080B34E19354D200024C641 /* ASIAuthenticationDialog.m in Sources */,

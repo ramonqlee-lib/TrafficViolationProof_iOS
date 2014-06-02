@@ -11,7 +11,7 @@
 @protocol Protocol <NSObject>
 
 @required
--(NSData*)pack;
+-(NSData*)pack:(id)obj;
 
 -(id)unpack:(NSData*) data;
 

@@ -10,7 +10,8 @@
 #import "Protocol.h"
 
 @interface ViolationQueryProtocol : NSObject  <Protocol>
--(NSData*)pack;
+
+-(NSData*)pack:(id)vehicle;
 
 -(id)unpack:(NSData*) data;
 @end

@@ -9,8 +9,15 @@
 #import "ViolationDetailController.h"
 #import "UIBarButtonItem+Customed.h"
 #import "HTTPHelper.h"
+#import "GZIP.h"
+#import "DESUtils.h"
+#import "ViolationQueryProtocol.h"
+#import "Vehicle.h"
+#import <zlib.h>
 
 #define kTrafficQueryUrl @"http://trafficviolationproof.duapp.com/trafficquery.php"//查询违章
+static NSString* DES_KEY =  @"ab345678";
+static NSString*  DES_IV = @"12345678";
 
 @interface ViolationDetailController ()
 
@@ -72,10 +79,24 @@
 -(void)startRequest
 {
     //TODO::待添加查询违章请求数据
-    NSData* data = [@"134" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* orgData = [@"134" dataUsingEncoding:NSUTF8StringEncoding];
+    ViolationQueryProtocol* protocol = [[[ViolationQueryProtocol alloc]init]autorelease];
+    
+    //FIXME::待替换为正式的车辆信息
+    Vehicle* vehicle = [[[Vehicle alloc]init]autorelease];
+    vehicle.area = @"北京";
+    vehicle.licNumber = @"冀FRB091";
+    vehicle.engineNumber = @"hgdddf";
+    vehicle.frameNumber = @"";
+    
+    orgData = [protocol pack:vehicle];
+    
+    //des only
+    NSData* encryptedData = [orgData encryptUseDES:DES_KEY iv:DES_IV];
+    //des
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getResult:) name:kTrafficQueryUrl object:nil];
-    [[HTTPHelper sharedInstance]beginPostRequest:kTrafficQueryUrl withData:data];
+    [[HTTPHelper sharedInstance]beginPostRequest:kTrafficQueryUrl withData:encryptedData];
 }
 
 //TODO::根据从服务器获得的数据，更新本地数据
@@ -85,6 +106,7 @@
         if (!notification.userInfo || notification.userInfo.count==0) {
             return;
         }
+        //d
         
         //parse ads and send notification
 //        AdsConfiguration* adsConfig = [AdsConfiguration sharedInstance];
@@ -96,7 +118,7 @@
         //notify
 //        [[NSNotificationCenter defaultCenter]postNotificationName:kAdsConfigUpdated object:nil];
 //        
-//        [[NSNotificationCenter defaultCenter]removeObserver:self name:kSyncAdsJsonUrl object:nil];
+        [[NSNotificationCenter defaultCenter]removeObserver:self name:kTrafficQueryUrl object:nil];
     }
 }
 @end
