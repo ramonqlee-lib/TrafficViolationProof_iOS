@@ -69,6 +69,9 @@
 		3080B3C519394B6B0024C641 /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3C419394B6B0024C641 /* GZIP.m */; };
 		3080B3C919394CB00024C641 /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3C819394CB00024C641 /* DESUtils.m */; };
 		3080B3CD193C16AF0024C641 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3CC193C16AF0024C641 /* JSONKit.m */; };
+		3080B3CF193C7DF00024C641 /* release.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3CE193C7DF00024C641 /* release.rtf */; };
+		3080B3D2193C7EF10024C641 /* WzTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B3D1193C7EF10024C641 /* WzTableViewCell.m */; };
+		3080B3D5193C7FD80024C641 /* WzTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3D4193C7FD80024C641 /* WzTableViewCell.xib */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -233,6 +236,10 @@
 		3080B3C819394CB00024C641 /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
 		3080B3CB193C16AF0024C641 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		3080B3CC193C16AF0024C641 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		3080B3CE193C7DF00024C641 /* release.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = release.rtf; sourceTree = "<group>"; };
+		3080B3D0193C7EF10024C641 /* WzTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WzTableViewCell.h; sourceTree = "<group>"; };
+		3080B3D1193C7EF10024C641 /* WzTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WzTableViewCell.m; sourceTree = "<group>"; };
+		3080B3D4193C7FD80024C641 /* WzTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WzTableViewCell.xib; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -337,6 +344,7 @@
 		3080B2C2193400F80024C641 /* ViolationQuery */ = {
 			isa = PBXGroup;
 			children = (
+				3080B3D3193C7FB80024C641 /* WzTableViewCell */,
 				3080B2C3193401120024C641 /* VehicleManageController.h */,
 				3080B2C4193401120024C641 /* VehicleManageController.m */,
 				3080B2C61934013F0024C641 /* ViolationDetailController.h */,
@@ -583,6 +591,16 @@
 			path = ../../../../iOS_Lib/JSONKit;
 			sourceTree = "<group>";
 		};
+		3080B3D3193C7FB80024C641 /* WzTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3080B3D0193C7EF10024C641 /* WzTableViewCell.h */,
+				3080B3D1193C7EF10024C641 /* WzTableViewCell.m */,
+				3080B3D4193C7FD80024C641 /* WzTableViewCell.xib */,
+			);
+			name = WzTableViewCell;
+			sourceTree = "<group>";
+		};
 		308410E8192C0B01002E4069 = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +656,7 @@
 				308410FD192C0B01002E4069 /* InfoPlist.strings */,
 				30841100192C0B01002E4069 /* main.m */,
 				30841102192C0B01002E4069 /* TrafficViolationProof-Prefix.pch */,
+				3080B3CE193C7DF00024C641 /* release.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -815,6 +834,7 @@
 				3080B2B9192EB9640024C641 /* 3.jpg in Resources */,
 				30841144192C1613002E4069 /* CheckMarkWhite.png in Resources */,
 				3084114B192C1613002E4069 /* TestPanel3.xib in Resources */,
+				3080B3CF193C7DF00024C641 /* release.rtf in Resources */,
 				30841145192C1613002E4069 /* ForkImage.png in Resources */,
 				30841148192C1613002E4069 /* MYCustomPanel.xib in Resources */,
 				3080B2C11933FFAA0024C641 /* vehicle_manage_icon.jpeg in Resources */,
@@ -824,6 +844,7 @@
 				30841107192C0B01002E4069 /* Images.xcassets in Resources */,
 				3080B3871936A0520024C641 /* top_navigation_back@2x.png in Resources */,
 				3080B2B7192EB9640024C641 /* 1.jpg in Resources */,
+				3080B3D5193C7FD80024C641 /* WzTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +863,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3080B3D2193C7EF10024C641 /* WzTableViewCell.m in Sources */,
 				30841159192C1675002E4069 /* MYIntroductionPanel.m in Sources */,
 				3080B35D19354D200024C641 /* ASICloudFilesRequest.m in Sources */,
 				3080B3B61937ED330024C641 /* unzip.c in Sources */,

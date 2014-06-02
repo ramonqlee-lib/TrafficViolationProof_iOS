@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Vehicle.h"
 //违章详情界面
 @interface ViolationDetailController : UIViewController
+
+@property(nonatomic,retain)Vehicle* _vehicle;
 
 @end

@@ -113,7 +113,7 @@ static NSString* FRAMENUMBER = @"frameNumber";// 车架号[部分地区必选]
     p.fineString = [wz objectForKey:@"penalty"];
     
     p.licenceNumberString = [wz objectForKey:@"lpn"];
-    p.pointsString = [wz objectForKey:@"points"];
+    p.scoreString = [wz objectForKey:@"points"];
     p.illegalCodeString = [wz objectForKey:@"wzid"];
     p.tipString = [wz objectForKey:@"tip"];
     

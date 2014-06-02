@@ -15,15 +15,20 @@
 #import "Vehicle.h"
 #import "ViolationResult.h"
 #import "Penalty.h"
+#import "WzTableViewCell.h"
 
 #define kTrafficQueryUrl @"http://trafficviolationproof.duapp.com/trafficquery.php"//查询违章
 static NSString* DES_KEY =  @"ab345678";
 static NSString*  DES_IV = @"12345678";
 
+#define kNoViolationFoundString  @"未查询到违章信息!"
+#define kErrorString @"网络不给力，查询失败!"
+
 @interface ViolationDetailController ()<UITableViewDelegate,UITableViewDataSource>
 {
     ViolationResult* violations;
     UITableView* _tableView;
+    UILabel* _placeholderlabel;
 }
 @end
 
@@ -52,8 +57,8 @@ static NSString*  DES_IV = @"12345678";
     self.navigationItem.leftBarButtonItem = button;
     
     //TODO::查询违章后，显示违章
-    //右边菜单下拉列表
-    //中间展示违章列表（有可能为空）
+    //右边菜单下拉列表(去除地区选择，查询全国的违章)
+    //中间展示违章列表（有可能为空）(done)
     [self startRequest];
 }
 
@@ -86,14 +91,17 @@ static NSString*  DES_IV = @"12345678";
     NSData* orgData = [@"134" dataUsingEncoding:NSUTF8StringEncoding];
     ViolationQueryProtocol* protocol = [[[ViolationQueryProtocol alloc]init]autorelease];
     
-    //FIXME::待替换为正式的车辆信息
-    Vehicle* vehicle = [[[Vehicle alloc]init]autorelease];
-    vehicle.area = @"北京";
-    vehicle.licNumber = @"冀FRB091";
-    vehicle.engineNumber = @"hgdddf";
-    vehicle.frameNumber = @"";
+    //预留的车辆信息
+    if (!__vehicle) {
+        Vehicle* vehicle = [[[Vehicle alloc]init]autorelease];
+        vehicle.area = @"北京";
+        vehicle.licNumber = @"冀FRB091";
+        vehicle.engineNumber = @"hgdddf";
+        vehicle.frameNumber = @"";
+        __vehicle = vehicle;
+    }
     
-    orgData = [protocol pack:vehicle];
+    orgData = [protocol pack:__vehicle];
     
     //des only
     NSData* encryptedData = [orgData encryptUseDES:DES_KEY iv:DES_IV];
@@ -102,26 +110,57 @@ static NSString*  DES_IV = @"12345678";
     [[HTTPHelper sharedInstance]beginPostRequest:kTrafficQueryUrl withData:encryptedData];
 }
 
-//TODO::根据从服务器获得的数据，更新本地数据
+//::根据从服务器获得的数据，更新本地数据
 -(void)getResult:(NSNotification*)notification
 {
     if (notification && notification.object && ![notification.object isKindOfClass:[NSError class]]) {
         if (!notification.userInfo || notification.userInfo.count==0) {
+            [self populatePlaceholderview:kNoViolationFoundString];
             return;
         }
         
         //获取查询结果，并进行展示
         ViolationQueryProtocol* protocol = [[[ViolationQueryProtocol alloc]init]autorelease];
         violations = [protocol unpack:[notification.userInfo objectForKey:kTrafficQueryUrl] ];
+        
         [self populateTableView:violations];
 
         [[NSNotificationCenter defaultCenter]removeObserver:self name:kTrafficQueryUrl object:nil];
     }
+    else
+    {
+        [self populatePlaceholderview:kErrorString];
+    }
+}
+#pragma no violation found
+-(void)populatePlaceholderview:(NSString*)text
+{
+    if (!_placeholderlabel) {
+        _placeholderlabel = [[UILabel alloc]init];
+    }
+    CGRect rc= self.view.frame;
+    //是否有tabbar
+    if (self.navigationItem) {
+        rc.size.height -= self.navigationController.navigationBar.frame.size.height;
+    }
+    _placeholderlabel.frame = rc;
+    
+    _placeholderlabel.textAlignment = NSTextAlignmentCenter;
+    _placeholderlabel.text = text;
+    [self.view addSubview:_placeholderlabel];
+    
+    [_placeholderlabel release];
 }
 
 #pragma tableview related
 -(void)populateTableView:(ViolationResult*) result
 {
+    //确实存在违章
+    if (!violations || !violations.penalties||violations.penalties.count==0) {
+        [self populatePlaceholderview:kNoViolationFoundString];
+        return;
+    }
+    
     //tableview exist already,reload data only
     if (_tableView) {
         [_tableView reloadData];
@@ -148,7 +187,10 @@ static NSString*  DES_IV = @"12345678";
     //::点击了某一项后的反应
 }
 #pragma mark tableview datasource
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [WzTableViewCell cellHeight];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (!violations || !violations.penalties) {
@@ -162,21 +204,29 @@ static NSString*  DES_IV = @"12345678";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* kCellIdentifier = @"RMTableCellType";
-    //TODO::按照车辆信息，初始化cell
+    static NSString* kCellIdentifier = @"WzTableViewCell";
+    //TODO::按照车辆违章信息，初始化cell
     if (!violations || !violations.penalties) {
         return nil;
     }
-    Penalty* penalty = [violations.penalties objectAtIndex:indexPath.row];
     
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    if(cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
+    NSInteger row = (indexPath.row)%violations.penalties.count;
+    Penalty* penalty = [violations.penalties objectAtIndex:row];
+    
+    static BOOL registeredNib = NO;
+    if(!registeredNib){
+        UINib* nib = [UINib nibWithNibName:kCellIdentifier bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:kCellIdentifier];
+        registeredNib = YES;
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"在 %@ %@",penalty.locationString,penalty.reasonString];
-    cell.detailTextLabel.text = penalty.timeString;
+    WzTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+
+    [cell setIndexLabelValue:[NSString stringWithFormat:@"%d",row+1]];
+    cell.timeLabel.text = penalty.timeString;
+    cell.locationLabel.text = penalty.locationString;
+    cell.fineLabel.text = penalty.fineString;
+    [cell setScoreLabelValue:penalty.scoreString];
     
     return  cell;
 }

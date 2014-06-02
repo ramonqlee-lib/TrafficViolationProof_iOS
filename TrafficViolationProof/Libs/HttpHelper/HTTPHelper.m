@@ -290,7 +290,7 @@ Impl_Singleton(HTTPHelper)
     NSString* desFilePath = [CommonHelper getTargetBookPath:fileModel.destPath];
     [CommonHelper extractFile:fileName toFile:[CommonHelper getTargetBookPath:fileModel.destPath] fileType:fileModel.fileType];
     
-    //TODO::decrypt
+    //::decrypt
     if (fileModel.encrypt) {
         NSString* stream = [NSString stringWithContentsOfFile:desFilePath encoding:NSUTF8StringEncoding error:nil];
         if (stream) {

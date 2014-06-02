@@ -214,7 +214,7 @@
 +(NSString*)retBookFileNameInDirectory:(NSString*)path
 {
     NSString* bookFileName = @"";
-    //TODO::find book name in this directory
+    //::find book name in this directory
     //1.get file path
     //2.assume maximum-sized file in this path what we need
     
