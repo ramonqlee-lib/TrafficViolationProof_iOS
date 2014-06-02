@@ -14,13 +14,17 @@
 #import "ViolationQueryProtocol.h"
 #import "Vehicle.h"
 #import "ViolationResult.h"
+#import "Penalty.h"
 
 #define kTrafficQueryUrl @"http://trafficviolationproof.duapp.com/trafficquery.php"//查询违章
 static NSString* DES_KEY =  @"ab345678";
 static NSString*  DES_IV = @"12345678";
 
-@interface ViolationDetailController ()
-
+@interface ViolationDetailController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    ViolationResult* violations;
+    UITableView* _tableView;
+}
 @end
 
 @implementation ViolationDetailController
@@ -108,12 +112,72 @@ static NSString*  DES_IV = @"12345678";
         
         //获取查询结果，并进行展示
         ViolationQueryProtocol* protocol = [[[ViolationQueryProtocol alloc]init]autorelease];
-        ViolationResult* result = [protocol unpack:[notification.userInfo objectForKey:kTrafficQueryUrl] ];
-        
-        //notify
-//        [[NSNotificationCenter defaultCenter]postNotificationName:kAdsConfigUpdated object:nil];
-//        
+        violations = [protocol unpack:[notification.userInfo objectForKey:kTrafficQueryUrl] ];
+        [self populateTableView:violations];
+
         [[NSNotificationCenter defaultCenter]removeObserver:self name:kTrafficQueryUrl object:nil];
     }
+}
+
+#pragma tableview related
+-(void)populateTableView:(ViolationResult*) result
+{
+    //tableview exist already,reload data only
+    if (_tableView) {
+        [_tableView reloadData];
+        return;
+    }
+    
+    CGRect rc= self.view.frame;
+    //是否有tabbar
+    if (self.navigationItem) {
+        rc.size.height -= self.navigationController.navigationBar.frame.size.height;
+    }
+    
+    _tableView = [[[UITableView alloc]initWithFrame:rc]autorelease];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    [self.view addSubview:_tableView];
+}
+#pragma mark tableview delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //::点击了某一项后的反应
+}
+#pragma mark tableview datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (!violations || !violations.penalties) {
+        return 0;
+    }
+    return violations.penalties.count;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString* kCellIdentifier = @"RMTableCellType";
+    //TODO::按照车辆信息，初始化cell
+    if (!violations || !violations.penalties) {
+        return nil;
+    }
+    Penalty* penalty = [violations.penalties objectAtIndex:indexPath.row];
+    
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"在 %@ %@",penalty.locationString,penalty.reasonString];
+    cell.detailTextLabel.text = penalty.timeString;
+    
+    return  cell;
 }
 @end
