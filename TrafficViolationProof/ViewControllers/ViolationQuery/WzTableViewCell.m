@@ -33,16 +33,19 @@
 
 -(void)setIndexLabelValue:(NSString *)str
 {
-    _indexLabel.text = str;
     if (!str||str.length==0) {
         _indexLabel.hidden = YES;
         return;
     }
     _indexLabel.hidden = NO;
+    [_indexLabel setNumberOfLines:0];
+    [_indexLabel setLineBreakMode:NSLineBreakByClipping];
     
     CGRect rc = _indexLabel.frame;
     rc.size.width = [str sizeWithFont:_indexLabel.font constrainedToSize:rc.size lineBreakMode:NSLineBreakByClipping].width;
     _indexLabel.frame = rc;
+    
+    _indexLabel.text = str;
 }
 -(void)setScoreLabelValue:(NSString *)str
 {
@@ -58,7 +61,7 @@
 }
 +(NSInteger)cellHeight
 {
-    return 140;
+    return 115;
 }
 
 @end

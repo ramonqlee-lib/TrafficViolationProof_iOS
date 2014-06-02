@@ -23,6 +23,7 @@ static NSString*  DES_IV = @"12345678";
 
 #define kNoViolationFoundString  @"未查询到违章信息!"
 #define kErrorString @"网络不给力，查询失败!"
+#define kWaitNetRespondString @"正在查询违章..."
 
 @interface ViolationDetailController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -108,6 +109,8 @@ static NSString*  DES_IV = @"12345678";
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getResult:) name:kTrafficQueryUrl object:nil];
     [[HTTPHelper sharedInstance]beginPostRequest:kTrafficQueryUrl withData:encryptedData];
+    
+    [self populatePlaceholderview:kWaitNetRespondString];
 }
 
 //::根据从服务器获得的数据，更新本地数据
@@ -135,9 +138,11 @@ static NSString*  DES_IV = @"12345678";
 #pragma no violation found
 -(void)populatePlaceholderview:(NSString*)text
 {
-    if (!_placeholderlabel) {
-        _placeholderlabel = [[UILabel alloc]init];
+    if (_placeholderlabel) {
+        _placeholderlabel.text = text;
+        return;
     }
+    _placeholderlabel = [[UILabel alloc]init];
     CGRect rc= self.view.frame;
     //是否有tabbar
     if (self.navigationItem) {
@@ -146,7 +151,6 @@ static NSString*  DES_IV = @"12345678";
     _placeholderlabel.frame = rc;
     
     _placeholderlabel.textAlignment = NSTextAlignmentCenter;
-    _placeholderlabel.text = text;
     [self.view addSubview:_placeholderlabel];
     
     [_placeholderlabel release];
@@ -205,7 +209,7 @@ static NSString*  DES_IV = @"12345678";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* kCellIdentifier = @"WzTableViewCell";
-    //TODO::按照车辆违章信息，初始化cell
+    //::按照车辆违章信息，初始化cell
     if (!violations || !violations.penalties) {
         return nil;
     }
@@ -213,7 +217,7 @@ static NSString*  DES_IV = @"12345678";
     NSInteger row = (indexPath.row)%violations.penalties.count;
     Penalty* penalty = [violations.penalties objectAtIndex:row];
     
-    static BOOL registeredNib = NO;
+    BOOL registeredNib = NO;
     if(!registeredNib){
         UINib* nib = [UINib nibWithNibName:kCellIdentifier bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:kCellIdentifier];
@@ -221,7 +225,10 @@ static NSString*  DES_IV = @"12345678";
     }
     
     WzTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-
+    if (!cell) {
+        cell = [[WzTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellIdentifier];
+        NSLog(@"cell init");
+    }
     [cell setIndexLabelValue:[NSString stringWithFormat:@"%d",row+1]];
     cell.timeLabel.text = penalty.timeString;
     cell.locationLabel.text = penalty.locationString;
