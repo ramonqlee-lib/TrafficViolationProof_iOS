@@ -16,6 +16,7 @@
 #import "ViolationResult.h"
 #import "Penalty.h"
 #import "WzTableViewCell.h"
+#import "LeveyPopListView.h"
 
 #define kTrafficQueryUrl @"http://trafficviolationproof.duapp.com/trafficquery.php"//查询违章
 static NSString* DES_KEY =  @"ab345678";
@@ -25,11 +26,12 @@ static NSString*  DES_IV = @"12345678";
 #define kErrorString @"网络不给力，查询失败!"
 #define kWaitNetRespondString @"正在查询违章..."
 
-@interface ViolationDetailController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViolationDetailController ()<UITableViewDelegate,UITableViewDataSource,LeveyPopListViewDelegate>
 {
     ViolationResult* violations;
     UITableView* _tableView;
     UILabel* _placeholderlabel;
+    NSInteger selectedTableviewRow;
 }
 @end
 
@@ -187,8 +189,10 @@ static NSString*  DES_IV = @"12345678";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    selectedTableviewRow = indexPath.row;
     
-    //::点击了某一项后的反应
+    //::点击了某一项后弹出界面
+    [self showListView];
 }
 #pragma mark tableview datasource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -236,5 +240,29 @@ static NSString*  DES_IV = @"12345678";
     [cell setScoreLabelValue:penalty.scoreString];
     
     return  cell;
+}
+
+- (void)showListView
+{
+    NSArray* _options = [[NSArray arrayWithObjects:
+                 [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"facebook.png"],@"img",@"实景图",@"text", nil],
+                 [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"twitter.png"],@"img",@"周边违章",@"text", nil],
+                 [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"tumblr.png"],@"img",@"违章处理",@"text", nil],
+                 nil] retain];
+    
+    LeveyPopListView *lplv = [[LeveyPopListView alloc] initWithTitle:@"更多..." options:_options];
+    lplv.delegate = self;
+    [lplv showInView:self.view.window animated:YES];
+    [lplv release];
+}
+
+#pragma mark - LeveyPopListView delegates
+- (void)leveyPopListView:(LeveyPopListView *)popListView didSelectedIndex:(NSInteger)anIndex
+{
+//    _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",[[_options objectAtIndex:anIndex] objectForKey:@"text"]];
+}
+- (void)leveyPopListViewDidCancel
+{
+//    _infoLabel.text = @"You have cancelled";
 }
 @end
