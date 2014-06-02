@@ -59,8 +59,8 @@ static NSString*  DES_IV = @"12345678";
                                action:@selector(back)];
     self.navigationItem.leftBarButtonItem = button;
     
-    //TODO::查询违章后，显示违章
-    //右边菜单下拉列表(去除地区选择，查询全国的违章)
+    //TODO::查询违章后，显示违章(done)
+    //右边菜单下拉列表(去除地区选择，查询全国的违章)(实用性不高，暂时不添加)
     //中间展示违章列表（有可能为空）(done)
     [self startRequest];
 }
@@ -90,7 +90,7 @@ static NSString*  DES_IV = @"12345678";
 #pragma mark http request and response
 -(void)startRequest
 {
-    //TODO::待添加查询违章请求数据
+    //TODO::待添加查询违章请求数据(done,通过vehicle设定)
     NSData* orgData = [@"134" dataUsingEncoding:NSUTF8StringEncoding];
     ViolationQueryProtocol* protocol = [[[ViolationQueryProtocol alloc]init]autorelease];
     
@@ -259,7 +259,13 @@ static NSString*  DES_IV = @"12345678";
 #pragma mark - LeveyPopListView delegates
 - (void)leveyPopListView:(LeveyPopListView *)popListView didSelectedIndex:(NSInteger)anIndex
 {
-//    _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",[[_options objectAtIndex:anIndex] objectForKey:@"text"]];
+    //TODO::待完善
+    /*
+     1. 实景图：集成地图的三维实景图；
+     2. 周边违章：sohu的周边违章功能（后续增加？）
+     3. 违章处理(违章处理地点，电话，行程规划<缺省从当前地点到违章处理地点>)
+        根据当前城市，从服务器端请求违章处理地点的数据
+     */
 }
 - (void)leveyPopListViewDidCancel
 {
