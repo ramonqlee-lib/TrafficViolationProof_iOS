@@ -104,6 +104,8 @@ static NSString*  DES_IV = @"12345678";
         __vehicle = vehicle;
     }
     
+    self.title = __vehicle.licNumber;
+    
     orgData = [protocol pack:__vehicle];
     
     //des only
@@ -244,6 +246,7 @@ static NSString*  DES_IV = @"12345678";
 
 - (void)showListView
 {
+#if 0
     NSArray* _options = [[NSArray arrayWithObjects:
                  [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"facebook.png"],@"img",@"实景图",@"text", nil],
                  [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"twitter.png"],@"img",@"周边违章",@"text", nil],
@@ -254,12 +257,13 @@ static NSString*  DES_IV = @"12345678";
     lplv.delegate = self;
     [lplv showInView:self.view.window animated:YES];
     [lplv release];
+#endif
 }
 
 #pragma mark - LeveyPopListView delegates
 - (void)leveyPopListView:(LeveyPopListView *)popListView didSelectedIndex:(NSInteger)anIndex
 {
-    //TODO::待完善
+    //TODO::待完善功能
     /*
      1. 实景图：集成地图的三维实景图；
      2. 周边违章：sohu的周边违章功能（后续增加？）
