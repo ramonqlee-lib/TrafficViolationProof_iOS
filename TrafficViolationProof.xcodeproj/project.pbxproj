@@ -77,6 +77,7 @@
 		3080B3EB193D395C0024C641 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3E0193D395C0024C641 /* facebook.png */; };
 		3080B3F1193D395C0024C641 /* tumblr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3E6193D395C0024C641 /* tumblr.png */; };
 		3080B3F2193D395C0024C641 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3E7193D395C0024C641 /* twitter.png */; };
+		3080B3F6193E87C10024C641 /* VehicleManageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3080B3F5193E87C10024C641 /* VehicleManageController.xib */; };
 		308410F5192C0B01002E4069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F4192C0B01002E4069 /* Foundation.framework */; };
 		308410F7192C0B01002E4069 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F6192C0B01002E4069 /* CoreGraphics.framework */; };
 		308410F9192C0B01002E4069 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308410F8192C0B01002E4069 /* UIKit.framework */; };
@@ -252,6 +253,7 @@
 		3080B3E0193D395C0024C641 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		3080B3E6193D395C0024C641 /* tumblr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr.png; sourceTree = "<group>"; };
 		3080B3E7193D395C0024C641 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		3080B3F5193E87C10024C641 /* VehicleManageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VehicleManageController.xib; sourceTree = "<group>"; };
 		308410F1192C0B01002E4069 /* TrafficViolationProof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficViolationProof.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308410F4192C0B01002E4069 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		308410F6192C0B01002E4069 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -357,9 +359,8 @@
 		3080B2C2193400F80024C641 /* ViolationQuery */ = {
 			isa = PBXGroup;
 			children = (
+				3080B3F4193E87AE0024C641 /* VehicleManageController */,
 				3080B3D3193C7FB80024C641 /* WzTableViewCell */,
-				3080B2C3193401120024C641 /* VehicleManageController.h */,
-				3080B2C4193401120024C641 /* VehicleManageController.m */,
 				3080B2C61934013F0024C641 /* ViolationDetailController.h */,
 				3080B2C71934013F0024C641 /* ViolationDetailController.m */,
 			);
@@ -636,6 +637,16 @@
 			path = imgs;
 			sourceTree = "<group>";
 		};
+		3080B3F4193E87AE0024C641 /* VehicleManageController */ = {
+			isa = PBXGroup;
+			children = (
+				3080B2C3193401120024C641 /* VehicleManageController.h */,
+				3080B2C4193401120024C641 /* VehicleManageController.m */,
+				3080B3F5193E87C10024C641 /* VehicleManageController.xib */,
+			);
+			name = VehicleManageController;
+			sourceTree = "<group>";
+		};
 		308410E8192C0B01002E4069 = {
 			isa = PBXGroup;
 			children = (
@@ -869,6 +880,7 @@
 				30841146192C1613002E4069 /* HeaderImage.png in Resources */,
 				3080B2B9192EB9640024C641 /* 3.jpg in Resources */,
 				3080B3F1193D395C0024C641 /* tumblr.png in Resources */,
+				3080B3F6193E87C10024C641 /* VehicleManageController.xib in Resources */,
 				30841144192C1613002E4069 /* CheckMarkWhite.png in Resources */,
 				3084114B192C1613002E4069 /* TestPanel3.xib in Resources */,
 				3080B3CF193C7DF00024C641 /* release.rtf in Resources */,

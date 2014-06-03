@@ -11,6 +11,7 @@
 #import "RCDraggableButton.h"
 #import "SQLiteManager.h"
 #import "ViolationQuery/ViolationDetailController.h"
+#import "ViolationQuery/VehicleManageController.h"
 
 #define kTopCoverFlowHeight 150
 
@@ -120,6 +121,11 @@
         NSLog(@"\n\tAvatar in keyWindow ===  Tap!!! ===");
         //TODO::弹出车辆管理界面（添加|修改|删除）
         
+        //::跳转到对应车辆的违章查询界面
+        UIViewController* tmp = [[[VehicleManageController alloc]initWithNibName:@"VehicleManageController" bundle:nil]autorelease];
+        UINavigationController* navi = [[[UINavigationController alloc]initWithRootViewController:tmp]autorelease];
+        
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:navi animated:YES completion:nil];
     }];
     
     [avatar setDragDoneBlock:^(RCDraggableButton *avatar) {

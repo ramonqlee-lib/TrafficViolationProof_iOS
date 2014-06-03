@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-//车辆管理界面
+
+//车辆管理界面(支持新增，修改，删除，更新等操作)
 @interface VehicleManageController : UIViewController
 
 @end
