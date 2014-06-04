@@ -8,6 +8,8 @@
 
 #import "VehicleManageController.h"
 #import "UIBarButtonItem+Customed.h"
+#include "Vehicle.h"
+#import "RMAppData.h"
 
 @interface VehicleManageController ()
 
@@ -37,6 +39,9 @@
     
     //TODO::车辆管理界面，支持车辆信息的增删改等操作
     //车辆信息的操作，均通过数据库持久化进行
+    //1.首先考虑车辆增加
+    //2.车辆的信息修改
+    //3.车辆信息的删除
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,5 +63,27 @@
 -(void)back
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)finishSelected:(id)sender
+{
+    //TODO::收集车辆信息
+    NSLog(@"vehicle logged");
+    Vehicle* vehicle = [[Vehicle new]autorelease];
+    
+    vehicle.area = @"北京";
+    
+    vehicle.licNumber = _licenceNumber.text;
+    vehicle.licNumberType = _licenceNumberType.text;
+    vehicle.engineNumber  = _engineNumber.text;
+    vehicle.frameNumber = _frameNumber.text;
+    vehicle.comment = _comment.text;
+    
+    //校验下是否合法，然后再保存.不合法的，变下标题的颜色
+    
+    //save
+    [RMAppData add:vehicle];
+    
+    [self back];
 }
 @end

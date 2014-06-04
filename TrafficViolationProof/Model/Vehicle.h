@@ -12,8 +12,11 @@
 @interface Vehicle : NSObject<Persistable>
 
 @property(nonatomic,copy)NSString* area;
+@property(nonatomic,copy)NSString* licNumberType;
 @property(nonatomic,copy)NSString* licNumber;
 @property(nonatomic,copy)NSString* engineNumber;
 @property(nonatomic,copy)NSString* frameNumber;
+
+@property(nonatomic,copy)NSString* comment;
 
 @end
