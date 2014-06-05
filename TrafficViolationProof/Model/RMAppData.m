@@ -11,7 +11,24 @@
 #import "StringUtil.h"
 
 @implementation RMAppData
+//获取记录总数
++(NSInteger)count:(id<Persistable>)item
+{
+    SQLiteManager* dbManager = [[[SQLiteManager alloc] initWithDatabaseNamed:[item dbFileName]]autorelease];
+    NSInteger c= [dbManager countOfRecords:[item tableName]];
+    [dbManager closeDatabase];
+    return c;
+}
 
+//当前记录是否存在
++(BOOL)recordExist:(id<Persistable>)item
+{
+    SQLiteManager* dbManager = [[[SQLiteManager alloc] initWithDatabaseNamed:[item dbFileName]]autorelease];
+    NSString* sql = [item rowExistSql];//
+    NSArray * r = [dbManager getRowsForQuery:sql];
+    
+    return (r&&r.count>0);
+}
 +(void)add:(id<Persistable>)item
 {
     if (!item) {
@@ -29,6 +46,7 @@
     NSString* sql = [item insertIntoTableSql];
 #endif
     [dbManager doQuery:sql];
+    [dbManager closeDatabase];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:[item postNotificationName] object:nil];
 }
@@ -70,6 +88,8 @@
     NSString* sql = [item deleteFromTableSql];
 #endif
     [dbManager doQuery:sql];
+    
+    [dbManager closeDatabase];
     
     [[NSNotificationCenter defaultCenter]postNotificationName:[item postNotificationName] object:nil];
 }
@@ -117,6 +137,8 @@
         article.favoriteNumber = ((NSString*)[item objectForKey:kFavoriteNumber]).intValue;
         [data addObject:article];
     }
+    [dbManager closeDatabase];
+    
     return data;
 #endif
 }

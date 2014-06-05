@@ -25,6 +25,11 @@ const static NSString* kComment=@"comment";
 {
     return ![Vehicle isEmpty:_area] && ![Vehicle isEmpty:_licNumber]&&  ![Vehicle isEmpty:_licNumberType] && ![Vehicle isEmpty:_engineNumber] && ![Vehicle isEmpty:_frameNumber];
 }
+
+-(NSString*)rowExistSql
+{
+    return [NSString stringWithFormat:@"select * from %@ where %@ = '%@'",[self tableName],kLicNumber,_licNumber];
+}
 -(NSString*)dbFileName//存储的文件名
 {
     return @"car.db";

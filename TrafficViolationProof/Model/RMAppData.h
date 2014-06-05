@@ -15,6 +15,7 @@
 -(NSString*)tableName;//存储的表名
 -(NSString*)postNotificationName;//当数据发生变化时，发送该通知
 
+-(NSString*)rowExistSql;//查询记录是否存在
 -(NSString*)createTableSql;//首次创建数据库的sql语句
 -(NSString*)insertIntoTableSql;//插入语句
 -(NSString*)deleteFromTableSql;//删除sql
@@ -25,6 +26,12 @@
 
 
 @interface RMAppData : NSObject
+
+//获取记录总数
++(NSInteger)count:(id<Persistable>)item;
+
+//当前记录是否存在
++(BOOL)recordExist:(id<Persistable>)item;
 
 //收藏库的操作
 +(void)add:(id<Persistable>)item;//添加到收藏库中

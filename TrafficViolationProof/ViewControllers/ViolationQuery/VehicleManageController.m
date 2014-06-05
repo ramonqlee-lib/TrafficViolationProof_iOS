@@ -13,7 +13,7 @@
 
 CGFloat keyboardHeight=216.0f;
 
-@interface VehicleManageController ()<UITextFieldDelegate>
+@interface VehicleManageController ()<UITextFieldDelegate,UIActionSheetDelegate>
 {
 }
 @end
@@ -37,7 +37,7 @@ CGFloat keyboardHeight=216.0f;
     [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"top_navigation_back.png"]
                         selectedImage:[UIImage imageNamed:@"top_navigation_back.png"]
                                target:self
-                               action:@selector(back)];
+                               action:@selector(back:)];
     self.navigationItem.leftBarButtonItem = button;
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
@@ -49,12 +49,6 @@ CGFloat keyboardHeight=216.0f;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
-                                               object:nil];
-    
-    //增加监听，当键退出时收出消息
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
                                                object:nil];
     
     //TODO::车辆管理界面，支持车辆信息的增删改等操作
@@ -80,9 +74,25 @@ CGFloat keyboardHeight=216.0f;
     // Pass the selected object to the new view controller.
 }
 */
+-(void)back:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"放弃当前操作?"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"放弃"
+                                               destructiveButtonTitle:@"不，继续"
+                                                    otherButtonTitles:nil
+                                  ];
+    [actionSheet showInView:self.view];
+    [actionSheet release];
+}
 -(void)back
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if(buttonIndex ==[actionSheet cancelButtonIndex]){
+        [self back];
+    }
 }
 
 -(IBAction)finishSelected:(id)sender
@@ -103,9 +113,13 @@ CGFloat keyboardHeight=216.0f;
     if (![vehicle isLegal]) {
         return;
     }
-    //save
-    [RMAppData add:vehicle];
     
+    //FIXME::在保存之前，检查下是否已经存在相同车牌，如果存在提示一下
+    if ([RMAppData recordExist:vehicle]) {
+        //是否覆盖
+        [RMAppData add:vehicle];
+    }
+
     [self back];
 }
 #pragma mark single tap
@@ -160,12 +174,8 @@ CGFloat keyboardHeight=216.0f;
     NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [aValue CGRectValue];
     keyboardHeight = keyboardRect.size.height;//尽管有点晚了，但是只有第一次采用了设定的缺省值
-}
-
-//当键退出时调用
-- (void)keyboardWillHide:(NSNotification *)aNotification
-{
     
+    //完成了键盘的高度获取，不再接受后续的键盘出现通知
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillShowNotification object:nil];
 }
-
 @end
