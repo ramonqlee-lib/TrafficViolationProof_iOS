@@ -13,8 +13,25 @@
 
 CGFloat keyboardHeight=216.0f;
 
+//数据存在时的覆盖
+@interface OverwriteDelegate : NSObject <UIActionSheetDelegate>
+@property(nonatomic,assign)VehicleManageController* controller;
+
+@end
+
+@implementation OverwriteDelegate
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if(buttonIndex !=[actionSheet cancelButtonIndex]){
+        [_controller saveAndExit];
+        return;
+    }
+    [_controller exitWithoutSave];
+}
+@end
+
 @interface VehicleManageController ()<UITextFieldDelegate,UIActionSheetDelegate>
 {
+    Vehicle* vehicle;
 }
 @end
 
@@ -85,13 +102,14 @@ CGFloat keyboardHeight=216.0f;
     [actionSheet showInView:self.view];
     [actionSheet release];
 }
--(void)back
+-(void)exitWithoutSave
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
+
 -(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if(buttonIndex ==[actionSheet cancelButtonIndex]){
-        [self back];
+        [self exitWithoutSave];
     }
 }
 
@@ -99,7 +117,9 @@ CGFloat keyboardHeight=216.0f;
 {
     //TODO::收集车辆信息
     NSLog(@"vehicle logged");
-    Vehicle* vehicle = [[Vehicle new]autorelease];
+    if (!vehicle) {
+        vehicle = [[Vehicle new]autorelease];
+    }
     
     vehicle.area = @"北京";
     
@@ -115,12 +135,29 @@ CGFloat keyboardHeight=216.0f;
     }
     
     //FIXME::在保存之前，检查下是否已经存在相同车牌，如果存在提示一下
-    if ([RMAppData recordExist:vehicle]) {
-        //是否覆盖
+    if (![RMAppData recordExist:vehicle]) {
+        [self saveAndExit];
+        return;
     }
+    
+    //是否覆盖
+    OverwriteDelegate* delegate = [[OverwriteDelegate new]autorelease];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"已经存在相同车牌，是否替换?"
+                                                             delegate:delegate
+                                                    cancelButtonTitle:@"不替换"
+                                               destructiveButtonTitle:@"替换"
+                                                    otherButtonTitles:nil
+                                  ];
+    [actionSheet showInView:self.view];
+    [actionSheet release];
+    
+}
+-(void)saveAndExit
+{
     [RMAppData add:vehicle];
+    
+    [self exitWithoutSave];
 
-    [self back];
 }
 #pragma mark single tap
 -(IBAction)backgroundTap:(id)sender

@@ -19,4 +19,6 @@
 
 -(IBAction)finishSelected:(id)sender;
 -(IBAction)backgroundTap:(id)sender;
+-(void)exitWithoutSave;
+-(void)saveAndExit;
 @end
