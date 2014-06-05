@@ -16,7 +16,15 @@ const static NSString* kFrameNumber=@"frameNumber";
 const static NSString* kComment=@"comment";
 
 @implementation Vehicle
++(BOOL)isEmpty:(NSString*)str
+{
+    return (str==nil||str.length==0);
+}
 
+-(BOOL)isLegal
+{
+    return ![Vehicle isEmpty:_area] && ![Vehicle isEmpty:_licNumber]&&  ![Vehicle isEmpty:_licNumberType] && ![Vehicle isEmpty:_engineNumber] && ![Vehicle isEmpty:_frameNumber];
+}
 -(NSString*)dbFileName//存储的文件名
 {
     return @"car.db";

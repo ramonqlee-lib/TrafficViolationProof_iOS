@@ -19,4 +19,5 @@
 
 @property(nonatomic,copy)NSString* comment;
 
+-(BOOL)isLegal;
 @end

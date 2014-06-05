@@ -11,8 +11,11 @@
 #include "Vehicle.h"
 #import "RMAppData.h"
 
-@interface VehicleManageController ()
+CGFloat keyboardHeight=216.0f;
 
+@interface VehicleManageController ()<UITextFieldDelegate>
+{
+}
 @end
 
 @implementation VehicleManageController
@@ -36,6 +39,23 @@
                                target:self
                                action:@selector(back)];
     self.navigationItem.leftBarButtonItem = button;
+
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(backgroundTap:)];
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    //增加监听，当键盘出现或改变时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    //增加监听，当键退出时收出消息
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
     
     //TODO::车辆管理界面，支持车辆信息的增删改等操作
     //车辆信息的操作，均通过数据库持久化进行
@@ -80,10 +100,72 @@
     vehicle.comment = _comment.text;
     
     //校验下是否合法，然后再保存.不合法的，变下标题的颜色
-    
+    if (![vehicle isLegal]) {
+        return;
+    }
     //save
     [RMAppData add:vehicle];
     
     [self back];
 }
+#pragma mark single tap
+-(IBAction)backgroundTap:(id)sender
+{
+    for (UIView* view in self.view.subviews) {
+        if ([view isFirstResponder] && [view isKindOfClass:[UITextField class]]) {
+            [self textFieldShouldReturn:(UITextField *)view];
+            break;//only one exist,find end exit is OK
+        }
+    }
+}
+
+#pragma mark UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = rect;
+    [UIView commitAnimations];
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#define Move_Height 80
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGRect frame = textField.frame;
+    int offset = frame.origin.y + Move_Height - (self.view.frame.size.height - keyboardHeight);//键盘高度216
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    float width = self.view.frame.size.width;
+    float height = self.view.frame.size.height;
+    if(offset > 0)
+    {
+        CGRect rect = CGRectMake(0.0f, -offset,width,height);
+        self.view.frame = rect;
+    }
+    [UIView commitAnimations];
+}
+
+#pragma mark keyboard notification
+//当键盘出现或改变时调用
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    //获取键盘的高度
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    keyboardHeight = keyboardRect.size.height;//尽管有点晚了，但是只有第一次采用了设定的缺省值
+}
+
+//当键退出时调用
+- (void)keyboardWillHide:(NSNotification *)aNotification
+{
+    
+}
+
 @end

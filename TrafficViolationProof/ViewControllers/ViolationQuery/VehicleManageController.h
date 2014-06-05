@@ -18,5 +18,5 @@
 @property(nonatomic,retain)IBOutlet UITextField* comment;//备注名
 
 -(IBAction)finishSelected:(id)sender;
-
+-(IBAction)backgroundTap:(id)sender;
 @end
