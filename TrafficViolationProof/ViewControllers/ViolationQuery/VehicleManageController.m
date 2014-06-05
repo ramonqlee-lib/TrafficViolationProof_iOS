@@ -117,8 +117,8 @@ CGFloat keyboardHeight=216.0f;
     //FIXME::在保存之前，检查下是否已经存在相同车牌，如果存在提示一下
     if ([RMAppData recordExist:vehicle]) {
         //是否覆盖
-        [RMAppData add:vehicle];
     }
+    [RMAppData add:vehicle];
 
     [self back];
 }
