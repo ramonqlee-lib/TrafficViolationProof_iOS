@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3026C4C8192D606C00A1E1EF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026C4C7192D606C00A1E1EF /* BaseViewController.m */; };
+		302C53651942768F00941C57 /* RMPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 302C53641942768F00941C57 /* RMPreferences.m */; };
 		3080B2B2192EB8D30024C641 /* EScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080B2B1192EB8D30024C641 /* EScrollerView.m */; };
 		3080B2B7192EB9640024C641 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2B4192EB9640024C641 /* 1.jpg */; };
 		3080B2B8192EB9640024C641 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3080B2B5192EB9640024C641 /* 2.jpg */; };
@@ -121,6 +122,8 @@
 /* Begin PBXFileReference section */
 		3026C4C6192D606C00A1E1EF /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		3026C4C7192D606C00A1E1EF /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		302C53631942768F00941C57 /* RMPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPreferences.h; sourceTree = "<group>"; };
+		302C53641942768F00941C57 /* RMPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPreferences.m; sourceTree = "<group>"; };
 		3080B2B0192EB8D30024C641 /* EScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EScrollerView.h; sourceTree = "<group>"; };
 		3080B2B1192EB8D30024C641 /* EScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EScrollerView.m; sourceTree = "<group>"; };
 		3080B2B4192EB9640024C641 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -471,6 +474,8 @@
 				3080B38D1937E8B90024C641 /* ViolationResult.m */,
 				3080B36A193552DA0024C641 /* RMAppData.h */,
 				3080B36B193552DA0024C641 /* RMAppData.m */,
+				302C53631942768F00941C57 /* RMPreferences.h */,
+				302C53641942768F00941C57 /* RMPreferences.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -949,6 +954,7 @@
 				3084115C192D5C8E002E4069 /* AntiCameraViewController.m in Sources */,
 				3080B2BD1933FD660024C641 /* RCDraggableButton.m in Sources */,
 				3080B2C5193401120024C641 /* VehicleManageController.m in Sources */,
+				302C53651942768F00941C57 /* RMPreferences.m in Sources */,
 				3080B3B71937ED330024C641 /* zip.c in Sources */,
 				3080B36419354D200024C641 /* ASIS3ServiceRequest.m in Sources */,
 				3080B3881936A0520024C641 /* UIBarButtonItem+Customed.m in Sources */,

@@ -14,8 +14,10 @@
 #import "ViolationQuery/VehicleManageController.h"
 #import "RMAppData.h"
 #import "Vehicle.h"
+#import "RMPreferences.h"
 
 #define kTopCoverFlowHeight 150
+#define kAvatarOriginKey @"kAvatarOriginKey"
 
 @interface ViolationQueryTabController ()<EScrollerViewDelegate,UITableViewDelegate,UITableViewDataSource>
 {
@@ -121,7 +123,13 @@
     //考虑键值对的通用存储
     
     //TODO::在此提取拖动后的位置使用（有个初始值）
-    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(0, 400, 50, 50)];
+    CGPoint origin=CGPointMake(0, self.view.frame.size.height/2);
+    NSString* orginString = [RMPreferences stringForKey:kAvatarOriginKey];
+    if (orginString && orginString.length) {
+        origin = CGPointFromString(orginString);
+    }
+    
+    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(origin.x,origin.y, 50, 50)];
     [avatar setBackgroundImage:[UIImage imageNamed:@"vehicle_manage_icon.jpeg"] forState:UIControlStateNormal];
     
     [avatar setLongPressBlock:^(RCDraggableButton *avatar) {
@@ -132,8 +140,7 @@
     
     [avatar setTapBlock:^(RCDraggableButton *avatar) {
         NSLog(@"\n\tAvatar in keyWindow ===  Tap!!! ===");
-        //TODO::弹出车辆管理界面（添加|修改|删除）
-        
+        //::弹出车辆管理界面（添加|修改|删除）
         //::跳转到对应车辆的违章查询界面
         UIViewController* tmp = [[[VehicleManageController alloc]initWithNibName:@"VehicleManageController" bundle:nil]autorelease];
         UINavigationController* navi = [[[UINavigationController alloc]initWithRootViewController:tmp]autorelease];
@@ -141,10 +148,11 @@
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:navi animated:YES completion:nil];
     }];
     
-    [avatar setDragDoneBlock:^(RCDraggableButton *avatar) {
+    [avatar setAutoDockingDoneBlock:^(RCDraggableButton *avatar) {
         NSLog(@"\n\tAvatar in keyWindow === DragDone!!! ===");
         //TODO::在此记录拖动后的位置
-        
+        NSString* originStr = [NSString stringWithFormat:@"{%f,%f}",avatar.frame.origin.x,avatar.frame.origin.y];
+        [RMPreferences setString:originStr forKey:kAvatarOriginKey];
     }];
 }
 //TODO::显示车辆列表
