@@ -98,9 +98,16 @@
     
     //暂时不考虑支持国际化的问题，字符资源就写在这里了
     tabBarItem1.title = @"查违章";
+    tabBarItem1.image = [UIImage imageNamed:@"icon_tab_violation"];
+    
     tabBarItem2.title = @"防违章";
+    tabBarItem2.image =[UIImage imageNamed:@"icon_tab_anti_violation"];
+    
     tabBarItem3.title = @"历史违章";
+    tabBarItem3.image = [UIImage imageNamed:@"icon_tab_violation_history"];
+    
     tabBarItem4.title = @"设置";
+    tabBarItem4.image = [UIImage imageNamed:@"icon_tab_setting"];
     
     [tabBarItem1 setSelectedImage:[UIImage imageNamed:@"home_selected.png"]];
     [tabBarItem2 setSelectedImage:[UIImage imageNamed:@"maps_selected.png"]];

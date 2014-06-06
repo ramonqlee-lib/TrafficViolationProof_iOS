@@ -129,8 +129,8 @@
         origin = CGPointFromString(orginString);
     }
     
-    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(origin.x,origin.y, 50, 50)];
-    [avatar setBackgroundImage:[UIImage imageNamed:@"vehicle_manage_icon.jpeg"] forState:UIControlStateNormal];
+    RCDraggableButton *avatar = [[RCDraggableButton alloc] initInView:self.view WithFrame:CGRectMake(origin.x,origin.y, 32, 32)];
+    [avatar setBackgroundImage:[UIImage imageNamed:@"vehicle_manage_icon_32"] forState:UIControlStateNormal];
     
     [avatar setLongPressBlock:^(RCDraggableButton *avatar) {
         NSLog(@"\n\tAvatar in keyWindow ===  LongPress!!! ===");
