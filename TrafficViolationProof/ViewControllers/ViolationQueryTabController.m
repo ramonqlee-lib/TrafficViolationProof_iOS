@@ -12,11 +12,15 @@
 #import "SQLiteManager.h"
 #import "ViolationQuery/ViolationDetailController.h"
 #import "ViolationQuery/VehicleManageController.h"
+#import "RMAppData.h"
+#import "Vehicle.h"
 
 #define kTopCoverFlowHeight 150
 
 @interface ViolationQueryTabController ()<EScrollerViewDelegate,UITableViewDelegate,UITableViewDataSource>
-
+{
+    NSMutableArray* vehicleArray;//车辆数组
+}
 @end
 
 @implementation ViolationQueryTabController
@@ -34,6 +38,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    Vehicle* vehicle = [[Vehicle new]autorelease];
+    NSInteger c = [RMAppData count:vehicle];
+    if (c>0) {
+        if (!vehicleArray) {
+            vehicleArray = [[NSMutableArray alloc]initWithCapacity:c];
+        }
+        [vehicleArray addObjectsFromArray:[RMAppData query:NSMakeRange(0, c) withPersistable:vehicle]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -159,7 +172,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     //::跳转到对应车辆的违章查询界面
-    UIViewController* tmp = [[[ViolationDetailController alloc]init]autorelease];
+    ViolationDetailController* tmp = [[[ViolationDetailController alloc]init]autorelease];
+    
+    NSDictionary* dict = [vehicleArray objectAtIndex:indexPath.row];
+    if (!dict) {
+        return;
+    }
+    
+    tmp._vehicle = [Vehicle vehicleWithDict:dict];
     UINavigationController* navi = [[[UINavigationController alloc]initWithRootViewController:tmp]autorelease];
     
     [self.parentViewController presentViewController:navi animated:YES completion:nil];
@@ -169,7 +189,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //TODO::待读取车辆信息
-    return 10;
+    return vehicleArray?vehicleArray.count:0;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -179,13 +199,52 @@
 {
     static NSString* kCellIdentifier = @"RMTableCellImageTwinTextType";
     //TODO::按照车辆信息，初始化cell
+    
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     if(cell == nil)
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"第 %d 车辆",indexPath.row];
+    NSDictionary* dict = [vehicleArray objectAtIndex:indexPath.row];
+    if (!dict) {
+        return cell;
+    }
+    Vehicle* vehicle = [Vehicle vehicleWithDict:dict];
     
+    cell.textLabel.text = [NSString stringWithFormat:@"车牌号码: %@", vehicle.licNumber];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"发动机号码:%@",vehicle.engineNumber];
     return  cell;
 }
+
+//删除支持
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+/*改变删除按钮的title*/
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+/*删除用到的函数*/
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary* dict = [vehicleArray objectAtIndex:indexPath.row];
+    if (!dict) {
+        return;
+    }
+    
+    Vehicle* vehicle = [Vehicle vehicleWithDict:dict];
+    
+    //FIXME：：确认？？
+    [RMAppData remove:vehicle];
+    
+    
+    [vehicleArray removeObjectAtIndex:indexPath.row];
+    [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView reloadData];
+}
+
 @end

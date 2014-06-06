@@ -20,4 +20,5 @@
 @property(nonatomic,copy)NSString* comment;
 
 -(BOOL)isLegal;
++(id)vehicleWithDict:(NSDictionary*)dict;
 @end

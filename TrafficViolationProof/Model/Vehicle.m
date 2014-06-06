@@ -16,6 +16,20 @@ const static NSString* kFrameNumber=@"frameNumber";
 const static NSString* kComment=@"comment";
 
 @implementation Vehicle
++(id)vehicleWithDict:(NSDictionary*)dict
+{
+    Vehicle* vehicle = [[Vehicle new]autorelease];
+    if (dict) {
+        vehicle.area = [dict objectForKey:kArea];
+        vehicle.licNumber = [dict objectForKey:kLicNumber];
+        vehicle.licNumberType = [dict objectForKey:kLicNumberType];
+        vehicle.engineNumber = [dict objectForKey:kEngineNumber];
+        vehicle.frameNumber = [dict objectForKey:kFrameNumber];
+        vehicle.comment = [dict objectForKey:kComment];
+    }
+    
+    return vehicle;
+}
 +(BOOL)isEmpty:(NSString*)str
 {
     return (str==nil||str.length==0);
@@ -57,7 +71,7 @@ const static NSString* kComment=@"comment";
 }
 -(NSString*)deleteFromTableSql//删除sql
 {
-    NSString *sql = [NSString stringWithFormat:@"delete from '%@' where '%@' = '%@'",[self tableName],kLicNumber,_licNumber];
+    NSString *sql = [NSString stringWithFormat:@"delete from %@ where %@ = '%@'",[self tableName],kLicNumber,_licNumber];
     return sql;
 }
 @end
